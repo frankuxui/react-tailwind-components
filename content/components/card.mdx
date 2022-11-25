@@ -1,0 +1,102 @@
+---
+title: Card
+slug: card
+group: components
+description: Componente de uso fundamental, ya que representa todo lo visual del producto o la marca.
+---
+
+### Import
+
+```js
+import Card from 'components/@ui/card'
+```
+
+### Usage
+
+A continuación se muestra un ejemplo de una tarjeta básica con contenido mixto y un ancho fijo. Las tarjetas no tienen un ancho fijo para comenzar, por lo que naturalmente llenarán todo el ancho de su elemento principal. Esto se puede personalizar fácilmente con diversas opciones de tamaño.
+
+```jsx
+<Card>
+  <Card.Content>
+    <Card.Header>
+      <h5>Card header</h5>
+    </Card.Header>
+    <Card.Body>
+      lorem ipsum dolor ipsum dolor, minimatch dolor. Lore minimatch dolor. Lore minimatchore
+    </Card.Body>
+    <Card.Footer>
+      Card footer
+    </Card.Footer>
+  </Card.Content>
+</Card>
+```
+
+### Card content
+
+```jsx
+<Card>
+  <Card.Content border={true}>
+    <Card.Body>
+      lorem ipsum dolor ipsum dolor, minimatch dolor. Lore minimatch dolor. Lore minimatchore
+    </Card.Body>
+  </Card.Content>
+</Card>
+```
+
+### With border
+
+```jsx
+<Card>
+  <Card.Content border={true}>
+    <Card.Header>
+      <h5>Card header</h5>
+    </Card.Header>
+    <Card.Body border={true}>
+      lorem ipsum dolor ipsum dolor, minimatch dolor. Lore minimatch dolor. Lore minimatchore
+    </Card.Body>
+    <Card.Footer border={true}>
+      Card footer
+    </Card.Footer>
+  </Card.Content>
+</Card>
+```
+
+### Image
+
+```jsx
+<Card>
+  <Card.Content border={true} style={{ width: '22rem'}}>
+    <Image 
+      src='/images/pexels-photo-13836783.jpeg'
+      width={1460}
+      height={973}
+      layout='intrinsic'
+      objectFit="cover"
+      alt='Image'
+    />
+    <Card.Body border={true} className='space-y-2'>
+      <Text variant='headline4'>Web Design templates Selection</Text>
+      <p>lorem ipsum dolor ipsum dolor, minimatch dolor. Lore minimatch dolor. Lore minimatchore</p>
+    </Card.Body>
+    <Card.Footer border={true}>
+      <Button color='primary' size='sm'>View items</Button>
+    </Card.Footer>
+  </Card.Content>
+</Card>
+```
+
+### Body text
+
+```jsx
+<div className='space-y-2'>
+  <Text variant='body1'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+  <Text variant='body2'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+  <Text variant='body3'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+</div>
+```

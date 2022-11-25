@@ -1,0 +1,81 @@
+---
+title: Button
+slug: button
+group: components
+description: Elemento cliqueable de tipo botón que puede ser utilizado en formularios o en cualquier parte de la página que necesite un botón estándar y simple de aplicar.
+---
+
+### Import
+
+```js
+import Button from 'components/@ui/button'
+```
+
+### Usage
+
+```jsx
+<Button>Default</Button>
+```
+
+### Colors
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button color='primary'>Primary</Button>
+  <Button color='secondary'>Secondary</Button>
+</div>
+```
+
+### Disabled
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button color='primary' disabled>Disabled</Button>
+  <Button color='secondary' disabled>Disabled</Button>
+</div>
+```
+
+### Sizes
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button color='primary' size='sm'>Button sm</Button>
+  <Button color='primary' size='md'>Button md</Button>
+  <Button color='primary' size='lg'>Button lg</Button>
+  <Button color='primary' size='xl'>Button xl</Button>
+</div>
+```
+
+### With icons
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button color='primary'>
+    <span>Button</span>
+    <svg 
+      width={24} 
+      height={24} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="m13.75 6.75 5.5 5.25-5.5 5.25" />
+      <path d="M19 12H4.75" />
+    </svg>
+  </Button>
+</div>
+```
+
+### Link
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button href="/" passHref as={Link} color='primary'>
+    Button link
+  </Button>
+</div>
+```

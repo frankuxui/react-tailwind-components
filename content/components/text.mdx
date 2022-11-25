@@ -1,0 +1,102 @@
+---
+title: Text
+slug: text
+group: components
+description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
+---
+
+### Import
+
+```js
+import Text from 'components/@ui/text'
+```
+
+### Usage
+
+Ejemplo básico del uso del componente `Text`.
+
+### Headline
+
+```jsx
+<div className='space-y-2'>
+  <Text variant='headline1' as='h1'>Headline1</Text>
+  <Text variant='headline2' as='h2'>Headline2</Text>
+  <Text variant='headline3' as='h3'>Headline3</Text>
+  <Text variant='headline4' as='h4'>Headline4</Text>
+  <Text variant='headline5' as='h5'>Headline5</Text>
+  <Text variant='headline6' as='h6'>Headline6</Text>
+</div>
+```
+
+### Custom size
+
+```jsx
+<div className='space-y-2'>
+  <Text variant='headline1' size='9xl'>Headline1</Text>
+  <Text size='9xl'>Example</Text>
+  <Text size='8xl'>Example</Text>
+  <Text size='7xl'>Example</Text>
+  <Text size='6xl'>Example</Text>
+  <Text size='5xl'>Example</Text>
+  <Text size='4xl'>Example</Text>
+  <Text size='3xl'>Example</Text>
+  <Text size='2xl'>Example</Text>
+  <Text size='xl'>Example</Text>
+  <Text size='lg'>Example</Text>
+  <Text size='base'>Example</Text>
+  <Text size='sm'>Example</Text>
+  <Text size='xs'>Example</Text>
+</div>
+```
+
+### Body text
+
+```jsx
+<>
+  <Text variant='body1' as='p'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+  <Text variant='body2' as='p'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+  <Text variant='body3' as='p'>
+    Sint laboris ipsum elit et deserunt non aute sunt proident.
+  </Text>
+</>
+```
+
+### Override the element
+
+Para anular el elemento que se representa, pase como prop. Use Inspeccionar elemento para ver el elemento que se representa en html.
+
+```jsx
+<>
+  <Text as='b'>Bold</Text>
+  <br />
+  <Text as='i'>Italic</Text>
+  <br />
+  <Text as='u'>Underline</Text>
+  <br />
+  <Text as='abbr'>I18N</Text>
+  <br />
+  <Text as='cite'>Citation</Text>
+  <br />
+  <Text as='del'>Deleted</Text>
+  <br />
+  <Text as='em'>Emphasis</Text>
+  <br />
+  <Text as='ins'>Inserted</Text>
+  <br />
+  <Text as='kbd'>Ctrl + C</Text>
+  <br />
+  <Text as='mark'>Highlighted</Text>
+  <br />
+  <Text as='s'>Strikethrough</Text>
+  <br />
+  <Text as='samp'>Sample</Text>
+  <br />
+  <Text as='sub'>sub</Text>
+  <br />
+  <Text as='sup'>sup</Text>
+</>
+```

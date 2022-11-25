@@ -1,0 +1,55 @@
+---
+title: Badge
+slug: badge
+group: components
+description: Documentación y ejemplos para insignias, nuestro pequeño componente para el uso de conteo, etiquetado e informativo.
+---
+
+### Import
+
+```js
+import Badge from 'components/@ui/badge'
+```
+
+### Usage
+
+Ejemplo básico sobre la implementacion del component `Badge`.
+
+```jsx
+<Badge>Default badge</Badge>
+```
+
+### Colors
+
+Ejemplo del uso de los `Badges` en sus diferentes colores, muy importante a la hora de determinar el tipo de información y etiquetado dependiendo del contexto en el que nos encontramos.
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Badge color='primary'>Primary</Badge>
+  <Badge color='secondary'>Secondary</Badge>
+</div>
+```
+
+### Sizes
+
+Representación de los diferentes tamaños que están disponibles, para ello utilizamos la prop `size` con los valores siguientes disponibles `xs`, `sm` y `md`.
+
+```jsx
+<div className='space-x-2'>
+  <Badge size='xs' color='primary'>Extra small</Badge>
+  <Badge size='sm' color='primary'>Small</Badge>
+  <Badge size='md' color='primary'>Medium</Badge>
+  <Badge size='lg' color='primary'>Large</Badge>
+</div>
+```
+
+```jsx
+<div className='space-x-2'>
+  <Badge size='xs' color='primary'>1</Badge>
+  <Badge size='sm' color='primary'>2</Badge>
+  <Badge size='md' color='primary'>3</Badge>
+  <Badge size='lg' color='primary'>4</Badge>
+</div>
+```
+
+

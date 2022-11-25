@@ -1,0 +1,68 @@
+---
+title: Alert
+slug: alert
+group: components
+description: Muestra un diálogo de alerta con un mensaje opcional, y aguardará hasta que el usuario cierre la ventana de diálogo.
+---
+
+### Import
+
+```js
+import Component from 'components/@ui/folder'
+```
+
+### Usage
+
+
+```jsx
+<Alert>This is an example alert</Alert>
+```
+
+### Colors
+
+```jsx
+<div className='space-y-2'>
+  <Alert color='primary'>This is an example alert</Alert>
+  <Alert color='secondary'>This is an example alert</Alert>
+</div>
+```
+
+### Dismissible
+
+Ejemplo de una alerta en la cual se manipula su visibilidad dependiendo del valor del estado. La alerta es importante que tenga la prop `dismissible` para su funcionamiento y este visible boton de cierre.
+
+```jsx
+function DismissingAlert () {
+  const [open, setOpen] = React.useState()
+  return open
+    ? (
+      <Alert
+        color='primary'
+        onClose={() => setOpen(false)}
+      >
+        Nice, you triggered this alert message!
+      </Alert>
+      )
+    : (
+      <Button
+        onClick={() => setOpen(true)}
+        color='primary'
+      >
+        Open alert
+      </Button>
+      )
+}
+```
+
+### Additional content
+
+```jsx
+<Alert className='space-y-2'>
+  <h4>This is a primary alert</h4>
+  <p>This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <div className='flex items-center space-x-2'>
+    <Button color='primary' size='sm'>Primary</Button>
+    <Button color='secondary' size='sm'>Secondary</Button>
+  </div>
+</Alert>
+```

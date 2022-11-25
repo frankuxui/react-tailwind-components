@@ -9,13 +9,15 @@ const remarkGfm = import('remark-gfm')
 const rehypeStringify = import('rehype-stringify')
 const toc = import('@jsdevtools/rehype-toc')
 
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.pexels.com', 'localhost']
+    domains: ['localhost']
   }
 }
+
+module.exports = nextConfig
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,

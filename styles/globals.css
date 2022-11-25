@@ -1,26 +1,148 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* Apply (custom components )*/
 
-* {
-  box-sizing: border-box;
-}
+@layer components {
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  /* layout */
+
+  .docs-container {
+    @apply flex flex-col justify-between min-h-screen
   }
-  body {
-    color: white;
-    background: black;
+  .docs-main {
+    @apply pt-16 px-8 flex flex-col justify-center items-center
+  }
+
+  
+
+ 
+  /* Home */
+
+  .docs-card {
+    @apply flex flex-col border-2 cursor-pointer break-inside-avoid p-6 rounded-xl space-y-2 transition-colors no-underline font-normal
+  }
+  .docs-card:hover{
+    @apply text-blue-600 border-blue-600
+  }
+  
+  /* Typography */
+
+  .headline-1, h1 {
+    @apply text-4xl md:text-4xl font-bold
+  }
+  .headline-2, h2 {
+    @apply text-4xl md:text-3xl font-medium
+  }
+  .headline-3, h3 {
+    @apply text-3xl md:text-2xl font-medium
+  }
+  .headline-4, h4 {
+    @apply text-2xl md:text-xl font-medium
+  }
+  .headline-5, h5 {
+    @apply text-xl md:text-lg font-medium
+  }
+  .headline-6, h6 {
+    @apply text-lg md:text-base font-medium 
+  }
+  .docs-lead {
+    @apply text-lg
+  }
+  hr{
+    @apply my-14
+  }
+  
+  
+  /* Nav */
+
+  .docs-nav-link-card {
+    @apply no-underline block py-2 space-y-2 font-medium transition-all p-5 border rounded-lg bg-white border-slate-200 hover:border-slate-200 hover:text-black hover:shadow-lg hover:shadow-[#00000008]
+  }
+
+  /* Sidebar nav */
+
+  .docs-nav-link-sidebar {
+    @apply no-underline font-normal block px-4 py-2 my-1 rounded-full transition-all hover:text-black
+  }
+  .docs-nav-link-sidebar.active {
+    @apply font-medium bg-blue-200/10 text-blue-500
+  }
+
+  /* docs Table (props list ) */
+
+  table {
+    @apply border-collapse mt-8 table-auto w-full text-sm text-left
+  }
+  thead th {
+    @apply font-medium
+  }
+  thead tr {
+    @apply border-b border-slate-200 bg-slate-50 
+  }
+  tbody tr {
+    @apply border-b border-slate-200
+  }
+  th, td {
+    @apply p-4 
+  }
+
+
+  /* docs alerts */
+
+  .docs-callout{
+    @apply text-sm mt-4 p-4 rounded-md leading-[1.5] bg-slate-100
+  }
+  .docs-callout p {
+    @apply m-0
+  }
+  .docs-callout-success{
+    @apply bg-green-100
+  }
+  .docs-callout-success code {
+    @apply !bg-green-300 !text-black
+  }
+  .docs-callout-warning{
+    @apply bg-amber-100
+  }
+  .docs-callout-warning code {
+    @apply !bg-amber-200
+  }
+
+  /* mdx toc */
+
+  .toc-nav .toc-list-link{
+    @apply font-medium py-[3px] block underline
+  }
+  .toc-list{
+    @apply list-disc pl-4
+  }
+  .toc-list .toc-list {
+    @apply list-[circle]
+  }
+
+  /* Docs content */
+
+  .docs-content h2[id], .docs-content h3[id], .docs-content h4[id], .docs-content h5[id], .docs-content h6[id] {
+    @apply pt-[7rem] -mt-[5rem] mb-8
+  }
+  .docs-content p{
+    @apply mb-4
+  }
+
+  .header {
+    @apply sticky top-0 left-0 right-0 w-full z-20 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] bg-white transition-shadow
+  }
+  .aside {
+    @apply fixed left-0 top-0 h-full w-72 break-words pr-8 pb-6 pl-6 pt-4 shrink-0 hidden border-r z-40 md:block md:sticky md:top-20 md:h-[calc(100vh_-_4.5rem)] md:bg-transparent md:z-10 bg-white border-slate-200
+  }
+  .footer {
+    @apply w-full py-8 px-8 mt-14 border-t text-center border-slate-300
   }
 }
+
+
+
+
+  
