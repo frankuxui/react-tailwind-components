@@ -142,7 +142,19 @@
   }
 }
 
-
+code:not([class]), code.docs-code{
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: rgb(38 50 255);
+  font-family: '__Roboto_454ecf';
+  font-weight: 500;
+  font-size: 15px;
+  background: rgb(38 50 255 / 5%);
+}
+code.docs-text-code{
+  background-color: transparent;
+  color: rgb(38 50 255);
+}
 
 
   

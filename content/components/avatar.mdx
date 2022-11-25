@@ -1,0 +1,133 @@
+---
+title: Avatar
+slug: avatar
+group: components
+description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
+---
+
+### Import
+
+```js
+import Avatar from 'components/@ui/avatar'
+```
+
+### Usage
+
+```jsx
+<Avatar image='/images/avatar.png' />
+```
+
+### Rounded
+
+```jsx
+<div className="flex items-center space-x-2">
+  <Avatar image='https://randomuser.me/api/portraits/men/35.jpg' rounded={true} />
+</div>
+```
+
+### Sizes
+
+```jsx
+<div className="flex items-center flex-wrap space-x-2">
+  <Avatar size='xs' image='/images/avatar.png'/>
+  <Avatar size='sm' image='/images/avatar.png' />
+  <Avatar size='md' image='/images/avatar.png' />
+  <Avatar size='lg' image='/images/avatar.png' />
+  <Avatar size='xl' image='/images/avatar.png' />
+  <Avatar size='2xl' image='/images/avatar.png' />
+</div>
+```
+
+### Placeholder
+
+```jsx
+<div className="flex items-center space-x-2">
+  <Avatar />
+  <Avatar rounded={true} />
+</div>
+```
+### Name
+
+```jsx
+<>
+  <div className="flex items-center space-x-2">
+    <Avatar size='xs' name="Frank" />
+    <Avatar size='sm' name="Pedro" />
+    <Avatar size='md' name="Maria" />
+    <Avatar size='lg' name="Juan" />
+    <Avatar size='xl' name="Olivia" />
+    <Avatar size='2xl' name="Andres" />
+  </div>
+  <br/>
+  <div className="flex items-center space-x-2">
+    <Avatar rounded={true} size='xs' name="Frank" />
+    <Avatar rounded={true} size='sm' name="Pedro" />
+    <Avatar rounded={true} size='md' name="Maria" />
+    <Avatar rounded={true} size='lg' name="Juan" />
+    <Avatar rounded={true} size='xl' name="Olivia" />
+    <Avatar rounded={true} size='2xl' name="Andres" />
+  </div>
+</br>
+```
+
+### Status
+
+```jsx
+<div className="flex items-center space-x-2">
+  <Avatar
+    image="https://randomuser.me/api/portraits/men/35.jpg"
+    status="online"
+  />
+  <Avatar
+    image="https://randomuser.me/api/portraits/women/50.jpg"
+    rounded={true}
+    status="busy"
+    statusPosition="top-right"
+  />
+  <Avatar
+    image="https://randomuser.me/api/portraits/women/47.jpg"
+    status="offline"
+    statusPosition="bottom-left"
+  />
+  <Avatar
+    image="https://randomuser.me/api/portraits/men/95.jpg"
+    rounded={true}
+    status="away"
+    statusPosition="bottom-right"
+  />
+</div>
+```
+
+### Colors
+
+```jsx
+<>
+  <div className="flex items-center space-x-2">
+    <Avatar color='primary' name="Frank" />
+    <Avatar color='primary-light' name="Pedro" />
+    <Avatar color='secondary' name="Maria" />
+    <Avatar color='secondary-light' name="Maria" />
+  </div>
+  <br />
+  <div className="flex items-center space-x-2">
+    <Avatar rounded={true} color='primary' name="Carmen" />
+    <Avatar rounded={true} color='primary-light' name="Jhon" />
+    <Avatar rounded={true} color='secondary' name="Havana" />
+    <Avatar rounded={true} color='secondary-light' name="Yony" />
+  </div>
+  <br />
+  <div className="flex items-center space-x-2">
+    <Avatar color='primary'/>
+    <Avatar color='primary-light' />
+    <Avatar color='secondary' />
+    <Avatar color='secondary-light'/>
+  </div>
+  <br />
+  <div className="flex items-center space-x-2">
+    <Avatar rounded={true} color='primary'/>
+    <Avatar rounded={true} color='primary-light' />
+    <Avatar rounded={true} color='secondary' />
+    <Avatar rounded={true} color='secondary-light'/>
+  </div>
+</br>
+```

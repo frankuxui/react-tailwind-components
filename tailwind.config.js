@@ -15,8 +15,10 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.blue[700],
+        'primary-light': colors.blue[100],
         'primary-dark': colors.blue[800],
         secondary: colors.slate[600],
+        'secondary-light': colors.slate[200],
         'secondary-dark': colors.slate[700],
         'gray-base': colors.gray[200]
       },

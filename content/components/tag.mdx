@@ -1,0 +1,51 @@
+---
+title: Tag
+slug: tag
+group: components
+description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
+---
+
+### Import
+
+```js
+import Tag from 'components/@ui/tag'
+```
+
+### Usage
+
+```jsx
+<Tag>Javascript</Tag>
+```
+
+### Colors
+
+Los colores disponibles para las etiquetas son: `primary`, `primary-light`, `secondary`, `secondary-light`.
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Tag color='primary'>Javascript</Tag>
+  <Tag color='primary-light'>Nextjs</Tag>
+  <Tag color='secondary'>reactjs</Tag>
+  <Tag color='secondary-light'>Svelte</Tag>
+</div>
+```
+
+### Anchor
+
+```jsx
+<Tag as='a' href='/'>Javascript</Tag>
+```
+
+### Next link
+
+```jsx
+<Tag 
+  as={Link} 
+  href='https://nextjs.org/docs/api-reference/next/link'
+  target='_blank'
+  passHref
+>
+  Nextjs
+</Tag>
+```
+

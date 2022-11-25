@@ -2,7 +2,14 @@ import React from 'react'
 import classNames from 'classnames'
 import { useTheme } from 'components/@ui/hooks/useTheme'
 
-const Text = ({ children, variant, className, as: Component = 'div', size, ...rest }) => {
+export default function Text ({
+  children,
+  variant,
+  className,
+  as: Component = 'div',
+  size,
+  ...rest
+}) {
   const theme = useTheme().theme.text
 
   return (
@@ -19,5 +26,3 @@ const Text = ({ children, variant, className, as: Component = 'div', size, ...re
     </Component>
   )
 }
-
-export default Text

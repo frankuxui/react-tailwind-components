@@ -1,0 +1,55 @@
+---
+title: Spinner
+slug: spinner
+group: components
+description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
+---
+
+### Import
+
+```js
+import Spinner from 'components/@ui/spinner'
+```
+
+### Usage
+
+```jsx
+<Spinner />
+```
+
+### Colors
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Spinner color='primary'/>
+  <Spinner color='secondary'/>
+</div>
+```
+
+### Sizes
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Spinner size='xs'/>
+  <Spinner size='sm'/>
+  <Spinner size='md'/>
+  <Spinner size='lg'/>
+  <Spinner size='xl'/>
+  <Spinner size='2xl'/>
+</div>
+```
+
+### Buttons
+
+```jsx
+<div className='flex items-center space-x-2'>
+  <Button color='primary'>
+    <Spinner size='sm' light={true} color='primary'/>
+    <span>Loading...</span>
+  </Button>
+  <Button color='secondary'>
+    <Spinner size='sm' light={true} color='primary'/>
+    <span>Loading...</span>
+  </Button>
+</div>
+```
