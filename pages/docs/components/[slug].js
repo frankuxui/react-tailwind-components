@@ -56,7 +56,7 @@ const ExamplePage = ({ sidebar, frontMatter: { title, description }, mdxSource }
 // Static paths
 
 const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('content/components/'))
+  const files = fs.readdirSync(path.join('pages/docs/components/mdx/'))
   const paths = files.map(filename => ({
     params: {
       slug: filename.replace('.mdx', '')
@@ -72,15 +72,15 @@ const getStaticPaths = async () => {
 // Static props
 
 const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(path.join('content/components/', slug + '.mdx'), 'utf-8')
+  const markdownWithMeta = fs.readFileSync(path.join('pages/docs/components/mdx/', slug + '.mdx'), 'utf-8')
   const { data: frontMatter, content } = matter(markdownWithMeta)
   const mdxSource = await serialize(content, options)
 
   //
   // Sidebar Nav links
-  const files = fs.readdirSync(path.join('content/components/'))
+  const files = fs.readdirSync(path.join('pages/docs/components/mdx/'))
   const sidebar = files.map(filename => {
-    const markdownWithMeta = fs.readFileSync(path.join('content/components/', filename), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.join('pages/docs/components/mdx/', filename), 'utf-8')
     const { data: frontMatter } = matter(markdownWithMeta)
 
     return {

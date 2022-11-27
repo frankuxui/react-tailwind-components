@@ -34,10 +34,10 @@ const Componentes = ({ components }) => {
 }
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join('content/components/'))
+  const files = fs.readdirSync(path.join('pages/docs/components/mdx/'))
 
   const components = files.map(filename => {
-    const markdownWithMeta = fs.readFileSync(path.join('content/components/', filename), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.join('pages/docs/components/mdx/', filename), 'utf-8')
     const { data: frontMatter } = matter(markdownWithMeta)
 
     return {
