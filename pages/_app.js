@@ -2,7 +2,6 @@ import React from 'react'
 import { Roboto } from '@next/font/google'
 import '../styles/globals.css'
 import '../styles/prims-synthWave84.css'
-import { MDXProvider } from '@mdx-js/react'
 import APPContext from 'components/docs/context'
 
 const roboto = Roboto({
@@ -15,9 +14,7 @@ function MyApp ({ Component, pageProps }) {
     <>
       <style jsx global>{` html { font-family: ${roboto.style.fontFamily}; } `}</style>
       <APPContext>
-        <MDXProvider>
-          <Component {...pageProps} />
-        </MDXProvider>
+        <Component {...pageProps} />
       </APPContext>
     </>
   )

@@ -15,7 +15,6 @@ export default function Text ({
   return (
     <Component
       className={classNames(
-        theme.base,
         variant && theme.variant[variant],
         className && className,
         size && theme.size[size]
