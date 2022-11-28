@@ -41,6 +41,7 @@ const LiveCode = (props) => {
       code={props.children.props.children.trim()}
       scope={scope}
       language={matches && matches.groups && matches.groups.lang ? matches.groups.lang : ''}
+      transformCode={code => '/* @jsx mdx */' + code}
       disabled={props.disabled}
     >
       {!props.disabled && (

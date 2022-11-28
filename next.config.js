@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
-
-//
-// remark plugings
-// const remarkToc = import('remark-toc')
-// const remark = import('remark')
 const remarkGfm = import('remark-gfm')
-
 const rehypeStringify = import('rehype-stringify')
 const toc = import('@jsdevtools/rehype-toc')
 
@@ -13,17 +7,17 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.pexels.com', 'localhost']
+    domains: ['localhost']
   }
 }
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm], // remark plugings
-    rehypePlugins: [rehypeStringify, toc]
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeStringify, toc],
     // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
+    providerImportSource: '@mdx-js/react'
   }
 })
 module.exports = withMDX({
@@ -32,28 +26,10 @@ module.exports = withMDX({
 
 })
 
-//
-// Redirect
-
-module.exports = {
-  async redirects () {
-    return [
-      {
-        source: '/docs',
-        destination: '/docs/getting-started/start',
-        permanent: true
-      },
-      {
-        source: '/docs/getting-started',
-        destination: '/docs/getting-started/start',
-        permanent: true
-      }
-    ]
+module.exports = withMDX()
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  experimental: {
+    mdxRs: true
   }
-  /* webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false }
-
-    return config
-  } */
-}
+})

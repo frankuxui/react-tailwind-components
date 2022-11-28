@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
 /* Apply (custom components )*/
 
 @layer components {
@@ -146,7 +151,7 @@ code:not([class]), code.docs-code{
   padding: 1px 4px;
   border-radius: 3px;
   color: rgb(38 50 255);
-  font-family: '__Roboto_454ecf';
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 15px;
   background: rgb(38 50 255 / 5%);
@@ -156,6 +161,3 @@ code.docs-text-code{
   color: rgb(38 50 255);
 }
 
-body {
-  font-family: Roboto;
-}

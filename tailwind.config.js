@@ -5,7 +5,8 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
     './components/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './components/docs/**/*.{js,ts,jsx,tsx,md,mdx}'
+    './components/docs/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './pages/components/mdx/**/*.{md,mdx}'
   ],
   theme: {
     fontFamily: {
