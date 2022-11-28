@@ -23,9 +23,6 @@ module.exports = {
         'secondary-dark': colors.slate[700],
         'gray-base': colors.gray[200]
       },
-      fontFamily: {
-        roboto: ['var(--font-roboto)']
-      },
       screens: {
         sm: '640px', // => @media (min-width: 640px) { ... }
         md: '1024px', // => @media (min-width: 768px) { ... }
