@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import LayoutDocs from '../../../components/docs/layout/layout-docs'
-import { components } from '../../../components/docs/mdx-components/code'
+import { components } from 'components/docs/components/mdx'
 
 import remarkGfm from 'remark-gfm'
 

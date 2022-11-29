@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,7 +15,7 @@ import Spinner from 'components/@ui/spinner'
 import Tag from 'components/@ui/tag'
 import Text from 'components/@ui/text'
 
-export const scope = {
+export default {
   ...React,
   Link,
   Image,

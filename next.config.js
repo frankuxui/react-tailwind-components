@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-const remarkGfm = import('remark-gfm')
-const rehypeStringify = import('rehype-stringify')
-const toc = import('@jsdevtools/rehype-toc')
+// const remarkGfm = import('remark-gfm')
+// const rehypeStringify = import('rehype-stringify')
+// const toc = import('@jsdevtools/rehype-toc')
 
 module.exports = {
   reactStrictMode: true,
@@ -12,24 +12,12 @@ module.exports = {
 }
 
 const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
+  extension: /\.(md|mdx)$/,
   options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeStringify, toc],
-    // If you use `MDXProvider`, uncomment the following line.
-    providerImportSource: '@mdx-js/react'
+    remarkPlugins: [],
+    rehypePlugins: []
   }
 })
 module.exports = withMDX({
-  // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
-
-})
-
-module.exports = withMDX()
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  experimental: {
-    mdxRs: true
-  }
 })
