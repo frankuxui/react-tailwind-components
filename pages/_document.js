@@ -16,7 +16,7 @@ export default function Document () {
       <body>
         <Main />
         <NextScript />
-        <div id='gomotor-portal' />
+        <div id='toc-portal' />
       </body>
     </Html>
   )

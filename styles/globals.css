@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  scroll-behavior: smooth;
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto",sans-serif;
+  line-height: 1.5;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 /* Apply (custom components )*/
@@ -34,29 +44,23 @@ body, html {
   
   /* Typography */
 
-  .headline-1, h1 {
-    @apply text-4xl md:text-4xl font-bold
+  h1 {
+    @apply text-4xl md:text-5xl font-bold font-roboto
   }
-  .headline-2, h2 {
-    @apply text-4xl md:text-3xl font-medium
+  h2 {
+    @apply text-3xl md:text-4xl font-bold font-roboto
   }
-  .headline-3, h3 {
-    @apply text-3xl md:text-2xl font-medium
+  h3 {
+    @apply text-2xl md:text-3xl font-bold font-roboto
   }
-  .headline-4, h4 {
-    @apply text-2xl md:text-xl font-medium
+  h4 {
+    @apply text-xl md:text-2xl font-bold font-roboto
   }
-  .headline-5, h5 {
-    @apply text-xl md:text-lg font-medium
+  h5 {
+    @apply text-base md:text-lg font-medium font-roboto
   }
-  .headline-6, h6 {
-    @apply text-lg md:text-base font-medium 
-  }
-  .docs-lead {
-    @apply text-lg
-  }
-  hr{
-    @apply my-14
+  h6 {
+    @apply text-base font-bold font-roboto 
   }
   
   
@@ -93,57 +97,34 @@ body, html {
     @apply p-4 
   }
 
-
-  /* docs alerts */
-
-  .docs-callout{
-    @apply text-sm mt-4 p-4 rounded-md leading-[1.5] bg-slate-100
-  }
-  .docs-callout p {
-    @apply m-0
-  }
-  .docs-callout-success{
-    @apply bg-green-100
-  }
-  .docs-callout-success code {
-    @apply !bg-green-300 !text-black
-  }
-  .docs-callout-warning{
-    @apply bg-amber-100
-  }
-  .docs-callout-warning code {
-    @apply !bg-amber-200
-  }
-
-  /* mdx toc */
-
-  .toc-nav .toc-list-link{
-    @apply font-medium py-[3px] block underline
-  }
-  .toc-list{
-    @apply list-disc pl-4
-  }
-  .toc-list .toc-list {
-    @apply list-[circle]
-  }
-
   /* Docs content */
 
-  .docs-content h2[id], .docs-content h3[id], .docs-content h4[id], .docs-content h5[id], .docs-content h6[id] {
+  h2[id], h3[id], h4[id], h5[id], h6[id]{
     @apply pt-[7rem] -mt-[5rem] mb-8
   }
-  .docs-content p{
-    @apply mb-4
-  }
-
-  .header {
-    @apply sticky top-0 left-0 right-0 w-full z-20 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] bg-white transition-shadow
-  }
+  
+  
   .aside {
     @apply fixed left-0 top-0 h-full w-72 break-words pr-8 pb-6 pl-6 pt-4 shrink-0 hidden border-r z-40 md:block md:sticky md:top-20 md:h-[calc(100vh_-_4.5rem)] md:bg-transparent md:z-10 bg-white border-slate-200
   }
   .footer {
     @apply w-full py-8 px-8 mt-14 border-t text-center border-slate-300
+  }
+
+  .toc-content{
+    @apply sticky top-8 max-h-[calc(100vh_-_8rem)]
+  }
+  .toc-list {
+    @apply flex flex-col
+  }
+  .toc-list > li > .toc-list {
+    @apply pl-4 text-sm
+  }
+  .toc-list > li > .toc-link {
+    @apply text-base font-medium 
+  }
+  .toc-list > li > .toc-list .toc-link {
+    @apply text-sm
   }
 }
 

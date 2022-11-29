@@ -21,8 +21,8 @@ const tocPluging = () => {
     cssClasses: {
       toc: 'toc-nav',
       list: 'toc-list',
-      listItem: 'toc-list-item',
-      link: 'toc-list-link'
+      listItem: 'mt-2',
+      link: 'toc-link underline text-slate-600'
     }
   }
   return toc(option)
@@ -38,12 +38,11 @@ const options = {
   }
 }
 
-const ExamplePage = ({ sidebar, frontMatter: { title, description }, mdxSource }) => {
+const Page = ({ sidebar, frontMatter: { title, description }, mdxSource }) => {
   return (
     <LayoutDocs
       title={title}
-      pageSection={title}
-      pageSectionDescription={description}
+      description={description}
       sidebar={sidebar}
       toc
     >
@@ -100,4 +99,4 @@ const getStaticProps = async ({ params: { slug } }) => {
 }
 
 export { getStaticProps, getStaticPaths }
-export default ExamplePage
+export default Page

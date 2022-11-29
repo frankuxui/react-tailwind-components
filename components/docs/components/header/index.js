@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header className='header'>
+    <header className='sticky top-0 left-0 right-0 w-full z-20 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] bg-white transition-shadow'>
       <div className='h-16 m-auto max-w-[90rem]'>
         <div className='flex items-center justify-between w-full h-full px-6'>
           <div className='flex items-center justify-start'>
