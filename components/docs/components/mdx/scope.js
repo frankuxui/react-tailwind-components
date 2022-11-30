@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
+import { Accordion } from 'components/@ui/accordion'
 import Alert from 'components/@ui/alert'
 import Avatar from 'components/@ui/avatar'
 import Badge from 'components/@ui/badge'
@@ -20,6 +21,7 @@ export default {
   Link,
   Image,
   classNames,
+  Accordion,
   Alert,
   Avatar,
   Badge,

@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header className='sticky top-0 left-0 right-0 w-full z-20 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] bg-white transition-shadow'>
+    <header className='sticky top-0 left-0 right-0 w-full z-20 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] bg-white/75 transition-shadow backdrop-blur-sm'>
       <div className='h-16 flex justify-between items-center m-auto max-w-[90rem] px-4'>
         <div className='flex items-center justify-start'>
           <Hamburger sidebarOpen={handleSidebar} />
