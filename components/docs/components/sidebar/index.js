@@ -31,7 +31,7 @@ const Sidebar = ({ sidebar }) => {
   return (
     <>
       <aside
-        className={cx('aside', sidebarOpen && 'block')}
+        className={cx('fixed left-0 top-0 h-full w-72 break-words pr-8 pb-6 pl-6 pt-4 shrink-0 hidden border-r z-40 md:block md:sticky md:top-20 md:h-[calc(100vh_-_4.5rem)] md:bg-transparent md:z-10 bg-white', sidebarOpen && '!block')}
       >
         {sidebarOpen && (
           <div className='flex md:hidden items-center justify-between mb-6 -mr-6'>

@@ -5,11 +5,9 @@ import APPContext from 'components/docs/context'
 
 function MyApp ({ Component, pageProps }) {
   return (
-    <>
-      <APPContext>
-        <Component {...pageProps} />
-      </APPContext>
-    </>
+    <APPContext>
+      <Component {...pageProps} />
+    </APPContext>
   )
 }
 

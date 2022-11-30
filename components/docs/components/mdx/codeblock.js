@@ -1,6 +1,5 @@
 import React from 'react'
-import { LiveProvider, LivePreview } from 'react-live'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import { LiveProvider, LivePreview, LiveEditor } from 'react-live'
 import Demo from './demo'
 import copy from 'copy-to-clipboard'
 import CopyClipboard from './copy-clipboard'
@@ -11,7 +10,6 @@ const SyntaxHighlighter = props => {
   const className = props.children.props.className || ''
   const matches = className.match(/language-(?<lang>.*)/)
   const language = matches && matches.groups && matches.groups.lang ? matches.groups.lang : ''
-
   const [copied, setCopied] = React.useState(false)
 
   React.useEffect(() => {
@@ -31,36 +29,19 @@ const SyntaxHighlighter = props => {
       code={props.children.props.children.trim()}
       scope={scope}
       language={matches && matches.groups && matches.groups.lang ? matches.groups.lang : ''}
-
+      disabled
     >
-      <Demo>
-        <LivePreview className='live-preview' />
-      </Demo>
-      {/* <LiveEditor className='live-editor' /> */}
+      {language === 'jsx' && (
+        <Demo>
+          <LivePreview className='live-preview' />
+        </Demo>
+      )}
       <div className='relative p-4 pt-6 rounded-xl bg-[#2a2734]'>
         <CopyClipboard text={copied ? 'Copied' : 'Copy'} onCopied={() => setCopied(true)} />
         <div className='ml-3 flex text-xs uppercase text-gray-400 font-medium font-roboto'>
           Example code
         </div>
-        <Highlight
-          {...defaultProps} code={props.children.props.children.trim()}
-          language={language}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre className={classNames('!text-sm md:!text-base', className && className)} style={style}>
-              {tokens.map((line, i) => (
-                <div {...getLineProps({ line, key: i })} key={i} className='table-row'>
-                  {/* <span className='table-cell text-right pr-4'>{i + 1}</span> */}
-                  <div className='table-cell'>
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
+        <LiveEditor className={classNames('!text-sm md:!text-base', className && className)} />
       </div>
       {/* <LiveError /> */}
     </LiveProvider>
