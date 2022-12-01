@@ -6,7 +6,8 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
     './components/**/*.{js,ts,jsx,tsx,md,mdx}',
     './components/docs/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './pages/components/mdx/**/*.{js,ts,jsx,tsx,md,mdx}'
+    './pages/components/mdx/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './components/@ui/theme/*.{js}'
   ],
   theme: {
     fontFamily: {
@@ -29,6 +30,28 @@ module.exports = {
         lg: '1280px', // => @media (min-width: 1024px) { ... }
         xl: '1400px', // => @media (min-width: 1280px) { ... }
         xxl: '1920px' // => @media (min-width: 1920px) { ... }
+      },
+
+      // Keyframes
+
+      keyframes: {
+        modal: {
+          '0%': {
+            transform: 'scale(0)',
+            animationTimingFunction: 'cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148)',
+            opacity: 0
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: 1
+          }
+        }
+      },
+
+      // Animation
+
+      animation: {
+        modal: 'modal 0.1s linear'
       }
     }
   },

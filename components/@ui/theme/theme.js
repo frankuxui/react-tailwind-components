@@ -4,7 +4,7 @@
 // Accordion
 
 const accordion = {
-  base: 'overflow-hidden rounded-lg divide-y divide-gray-200 border-gray-200 bg-white',
+  base: 'overflow-hidden rounded-lg divide-y divide-secondary-light border-secondary-light bg-white',
   content: {
     base: 'py-4 px-4 last:rounded-b-lg first:rounded-t-lg'
   },
@@ -156,6 +156,53 @@ const close = {
   base: 'flex flex-none items-center justify-center cursor-pointer rounded-full p-2 hover:bg-slate-900/10 transition-colors'
 }
 
+// Modal
+
+const modal = {
+  base: 'fixed flex items-start justify-center w-full h-full overflow-x-hidden overflow-y-auto outline-0 top-0 right-0 z-[70] bg-black/50',
+  backdrop: 'w-full h-full absolute inset-0',
+  content: 'relative flex flex-col w-full bg-white',
+  fade: {
+    on: 'animate-modal',
+    off: ''
+  },
+  border: {
+    on: 'divide-y divide-secondary-light',
+    off: ''
+  },
+  blur: {
+    on: 'backdrop-blur-sm',
+    off: ''
+  },
+  rounded: {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    xl: 'rounded-xl',
+    '2xl': 'rounded-2xl',
+    '3xl': 'rounded-3xl'
+  },
+  scrollable: {
+    on: 'max-h-full overflow-hidden h-[calc(100%_-_(4rem)_*_2)]',
+    off: 'overflow-hidden'
+  },
+  size: {
+    xs: 'sm:max-w-[18rem] my-16 mx-4',
+    sm: 'sm:max-w-[25rem] my-16 mx-4',
+    md: 'sm:max-w-[34rem] my-16 mx-4',
+    lg: 'sm:max-w-[50rem] my-16 mx-4',
+    xl: 'sm:max-w-[70rem] my-16 mx-4',
+    '2xl': 'sm:max-w-[80rem] my-16 mx-4',
+    full: 'w-full rounded-none m-0 h-full sm:max-w-full sm:w-full'
+  },
+  close: 'absolute flex items-center justify-center flex-none top-5 right-5 z-[1] p-1.5 rounded-full transition-colors hover:bg-black/10',
+  title: 'text-xl font-medium',
+  header: 'flex-shrink-0 relative flex items-start justify-between flex-col pt-5 pl-5 pb-5 pr-20',
+  body: 'flex-auto p-5 overflow-auto scrollbar',
+  footer: 'flex-shrink-0 flex items-center justify-end flex-wrap p-5 space-x-2'
+}
+
 // Tag
 
 const tag = {
@@ -172,6 +219,22 @@ const tag = {
 
 const progress = {
   base: 'relative'
+}
+
+// Sidebar
+
+const sidebar = {
+  base: 'fixed z-50 inset-0 overflow-hidden',
+  backdrop: 'fixed inset-0 bg-black/20',
+  blur: {
+    on: 'backdrop-blur-sm',
+    off: ''
+  },
+  content: 'relative flex flex-col bg-white w-80 max-h-screen min-h-screen max-w-[calc(100%_-_3rem)]',
+  close: 'absolute flex items-center justify-center flex-none top-5 right-5 z-[1] p-1.5 rounded-full transition-colors hover:bg-slate-100',
+  header: 'flex-[0_1_0%] pt-6 pl-6 pb-6 pr-20',
+  body: 'flex-1 overflow-auto px-6 scrollbar',
+  footer: 'flex-[0_0_5rem] p-6'
 }
 
 // Spinner
@@ -248,8 +311,10 @@ export default {
   button,
   card,
   close,
+  modal,
   tag,
   progress,
+  sidebar,
   spinner,
   text
 }

@@ -29,7 +29,7 @@ const SyntaxHighlighter = props => {
       code={props.children.props.children.trim()}
       scope={scope}
       language={matches && matches.groups && matches.groups.lang ? matches.groups.lang : ''}
-      disabled={false}
+      disabled={language === 'js'}
     >
       {language === 'jsx' && (
         <Demo>

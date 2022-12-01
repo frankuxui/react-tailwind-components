@@ -14,5 +14,127 @@ import Sidebar from 'components/@ui/sidebar'
 ### Usage
 
 ```jsx
-code
+function Example(){
+  const sidebarRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => sidebarRef.current.open()}
+      >
+        Open sidebar
+      </Button>
+
+      <Sidebar ref={sidebarRef}>
+        <Sidebar.Header>
+          <h5>Sidebar header</h5>
+        </Sidebar.Header>
+        <Sidebar.Body>
+          <p>Sidebar body</p>
+        </Sidebar.Body>
+        <Sidebar.Footer>
+          <h5>Sidebar footer</h5>
+        </Sidebar.Footer>
+      </Sidebar>
+    </>
+  )
+}
+```
+
+### Blur backdrop
+
+```jsx
+function Example(){
+  const sidebarRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => sidebarRef.current.open()}
+      >
+        Open sidebar
+      </Button>
+
+      <Sidebar ref={sidebarRef} blur>
+        <Sidebar.Header>
+          <h5>Sidebar header</h5>
+        </Sidebar.Header>
+        <Sidebar.Body>
+          <p>Sidebar body</p>
+        </Sidebar.Body>
+        <Sidebar.Footer>
+          <h5>Sidebar footer</h5>
+        </Sidebar.Footer>
+      </Sidebar>
+    </>
+  )
+}
+```
+
+### Static backdrop
+
+```jsx
+function Example() {
+  const sidebarRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => sidebarRef.current.open()}
+      >
+        Open sidebar
+      </Button>
+
+      <Sidebar ref={sidebarRef} staticBackdrop>
+        <Sidebar.Header>
+          <h5>Sidebar header</h5>
+        </Sidebar.Header>
+        <Sidebar.Body>
+          <p>Sidebar body</p>
+        </Sidebar.Body>
+        <Sidebar.Footer>
+          <h5>Sidebar footer</h5>
+        </Sidebar.Footer>
+      </Sidebar>
+    </>
+  )
+}
+```
+
+### With body content
+
+```jsx
+function Example(){
+  const sidebarRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => sidebarRef.current.open()}
+      >
+        Open sidebar
+      </Button>
+
+      <Sidebar ref={sidebarRef} blur>
+        <Sidebar.Header>
+          <h5>Sidebar header</h5>
+        </Sidebar.Header>
+        <Sidebar.Body>
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+        </Sidebar.Body>
+        <Sidebar.Footer>
+          <h5>Sidebar footer</h5>
+        </Sidebar.Footer>
+      </Sidebar>
+    </>
+  )
+}
 ```

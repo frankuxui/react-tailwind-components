@@ -97,11 +97,14 @@ const Sidebar = ({ sidebar }) => {
               <li key={index}>
                 <Link
                   href={{ pathname: `/docs/${categorie}/${item.frontMatter?.title?.split(' ').join('-').toLowerCase()}` }} passHref
-                  className={cx('docs-nav-link-sidebar', item.frontMatter?.slug?.split(' ').join('-').toLowerCase() === slug.split('#')[0] ? 'active' : '')}
+                  className={cx('flex justify-start items-center no-underline font-normal px-4 py-2 my-1 rounded-full transition-all hover:text-black', item.frontMatter?.slug?.split(' ').join('-').toLowerCase() === slug.split('#')[0] ? 'font-medium bg-blue-200/10 text-blue-500' : '')}
                   onClick={handleSidebar}
                 >
 
                   {item.frontMatter.title}
+                  {item.frontMatter.isComing && (
+                    <span className='ml-3 px-2 py-1 text-[11px] flex items-center justify-center rounded-md flex-none bg-blue-100 text-black'>Coming soon</span>
+                  )}
                 </Link>
               </li>
             ))}

@@ -10,6 +10,7 @@ import Badge from 'components/@ui/badge'
 import Button from 'components/@ui/button'
 import Card from 'components/@ui/card'
 import Close from 'components/@ui/close'
+import Modal from 'components/@ui/modal'
 import Progress from 'components/@ui/progress'
 import Sidebar from 'components/@ui/sidebar'
 import Spinner from 'components/@ui/spinner'
@@ -28,6 +29,7 @@ export default {
   Button,
   Card,
   Close,
+  Modal,
   Progress,
   Sidebar,
   Spinner,

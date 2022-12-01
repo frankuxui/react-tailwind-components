@@ -1,0 +1,475 @@
+---
+title: Modal
+slug: modal
+group: components
+description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
+---
+
+### Import
+
+```js
+import Modal from 'components/@ui/modal'
+```
+
+### Usage
+
+```js
+<Modal>
+  <Modal.Header>
+    <Modal.Title>Header</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <p>Modal body</p>
+  </Modal.Body>
+  <Modal.Footer>
+    <p>Modal footer</p>
+  </Modal.Footer>
+</Modal>
+```
+
+### Live demo
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Sizes
+
+Representación de los diferentes tamaños que están disponibles, para ello utilizamos la prop size con los valores siguientes disponibles `xs`, `sm` `md`, `lg`, `xl`, `2xl` y `full`.
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  const [size, setSize] = React.useState('')
+
+  const handleSize = (e) => {
+    modalRef.current.open()
+    setSize(e.target.innerText)
+  }
+  const sizes = ['xs','sm','md','lg','xl','2xl','full']
+
+  return (
+    <>
+      <div className='flex items-center space-x-2 mb-4'>
+        {sizes.map((size) => (
+          <Button
+            key={size}
+            size='sm'
+            onClick={(e) => handleSize(e)}
+          >
+            {size}
+          </Button>
+        ))}
+      </div>
+
+      <Modal ref={modalRef} size={size}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Blur backdrop
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef} blur>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Static backdrop
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef} staticBackdrop={true}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Divided by borders
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef} border={true}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Rounded
+
+Representación de los diferentes redondeados que están disponibles, para ello utilizamos la prop `rounded` con los valores siguientes disponibles `none`, `sm` `md`, `lg`, `xl`, `2xl` y `3xl`.
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  const [rounded, setRounded] = React.useState('')
+
+  const handleRounded = (e) => {
+    modalRef.current.open()
+    setRounded(e.target.innerText)
+  }
+  const roundedList = ['none','sm','md','lg','xl','2xl','3xl']
+
+  return (
+    <>
+      <div className='flex items-center space-x-2 mb-4'>
+        {roundedList.map((rounded) => (
+          <Button
+            key={rounded}
+            size='sm'
+            onClick={(e) => handleRounded(e)}
+          >
+            {rounded}
+          </Button>
+        ))}
+      </div>
+
+      <Modal ref={modalRef} rounded={rounded}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Enable animation
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef} animation={true}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Modal body</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <p>Modal footer</p>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+#### Tailwind animation config
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        modal: {
+          '0%': {
+            transform: 'scale(0)',
+            animationTimingFunction: 'cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148)',
+            opacity: 0
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: 1
+          }
+        }
+      },
+      animation: {
+        modal: 'modal 0.1s linear'
+      }
+    }
+  },
+  plugins: []
+}
+```
+
+### Contents
+
+#### Imagen
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef}>
+        <Image 
+          src='/images/pexels-photo-13836783.jpeg'
+          height={2250}
+          width={1500}
+          layout='intrinsic'
+          objectFit='cover'
+        />
+      </Modal>
+    </>
+  )
+}
+```
+
+#### Imagen and content
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef}>
+        <Image 
+          src='/images/pexels-photo-13836783.jpeg'
+          height={2250}
+          width={1500}
+          layout='intrinsic'
+          objectFit='cover'
+        />
+        <Modal.Body className='space-y-2'>
+          <Text variant='headline4'>
+            Web Design templates Selection
+          </Text>
+          <p>
+            lorem ipsum dolor ipsum dolor, minimatch dolor. 
+            Lore minimatch dolor aju pore minimatchore
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button>Amazing content</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+### Scrolling long content
+
+#### Scrollable modal
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='space-y-2'>
+          <Text variant='headline4'>
+            Web Design templates Selection
+          </Text>
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button>Logn content</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```
+
+#### Scrollable body
+
+```jsx
+function Example () {
+  const modalRef = React.useRef(null)
+  return (
+    <>
+      <Button 
+        onClick={() => modalRef.current.open()}
+      >
+        Open modal
+      </Button>
+
+      <Modal ref={modalRef} scrollable={true}>
+        <Modal.Header>
+          <Modal.Title>Header</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='space-y-2'>
+          <Text variant='headline4'>
+            Web Design templates Selection
+          </Text>
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+
+          <p>Proident eiusmod ad adipisicing duis aliqua mollit dolor id cupidatat eiusmod duis officia pariatur incididunt. In enim officia eiusmod irure laboris duis cillum duis. Cillum ad duis esse consectetur deserunt duis. Consequat veniam in proident voluptate cupidatat veniam aliquip anim amet laboris Lorem consequat minim. Ea proident cupidatat magna laboris eu ex ipsum commodo laboris id laboris minim velit. Est dolor culpa qui anim elit. Quis aute culpa aute deserunt officia.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button>Logn content</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+}
+```

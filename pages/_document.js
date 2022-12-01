@@ -16,7 +16,7 @@ export default function Document () {
       <body>
         <Main />
         <NextScript />
-        <div id='toc-portal' />
+        <div id='portal' />
       </body>
     </Html>
   )

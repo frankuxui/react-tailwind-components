@@ -1,0 +1,146 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import classNames from 'classnames'
+import ModalFooter from 'components/@ui/modal/modal-footer'
+import ModalBody from 'components/@ui/modal/modal-body'
+import ModalTitle from 'components/@ui/modal/modal-title'
+import ModalHeader from 'components/@ui/modal/modal-header'
+import { useTheme } from 'components/@ui/hooks/useTheme'
+
+function ModalRef ({
+  children,
+  animation = false,
+  defaultOpened = false,
+  size = 'md',
+  buttonClose = true,
+  staticBackdrop = false,
+  border = false,
+  rounded = 'md',
+  blur = false,
+  scrollable = false,
+  closeSize = 24,
+  ...rest
+}, ref) {
+  const theme = useTheme().theme.modal
+  const [isOpen, setIsOpen] = React.useState(defaultOpened)
+  const [isBrowser, setIsBrowser] = React.useState(false)
+
+  // Body overflow hidden
+
+  React.useEffect(() => {
+    if (isBrowser) {
+      document.body.style.overflow = isOpen ? 'hidden' : ''
+    }
+  }, [isOpen, isBrowser])
+
+  // Close callback
+
+  const close = React.useCallback(() => setIsOpen(false), [])
+  React.useImperativeHandle(
+    ref,
+    () => ({
+      open: () => setIsOpen(true),
+      close
+    }),
+    [close]
+  )
+
+  // static backdrop callback
+
+  const handleStaticModal = () => {
+    document.querySelector('.modal').style.transform = 'scale(1.01)'
+    setTimeout(() => {
+      document.querySelector('.modal').style.transform = 'scale(1)'
+    }
+    , 90)
+  }
+
+  // key scape config
+
+  const handleEscape = React.useCallback(
+    (event) => {
+      if (staticBackdrop) {
+        if (event.keyCode === 27) handleStaticModal()
+      } else {
+        if (event.keyCode === 27) close()
+      }
+    },
+    [close, staticBackdrop]
+  )
+
+  React.useEffect(() => {
+    setIsBrowser(true)
+    if (isOpen) document.addEventListener('keydown', handleEscape, false)
+    return () => {
+      document.removeEventListener('keydown', handleEscape, false)
+    }
+  }, [handleEscape, isOpen])
+
+  const modalComponent = (
+    isOpen && (
+      <div className={classNames('modal', theme.base)} {...rest}>
+        <div
+          className={classNames(theme.backdrop, blur && theme.blur[blur ? 'on' : 'off'])}
+          onClick={staticBackdrop === true ? handleStaticModal : close}
+        />
+        <div
+          className={classNames(
+            'modal-content',
+            theme.content,
+            theme.size[size],
+            theme.border[border ? 'on' : 'off'],
+            theme.rounded[rounded],
+            theme.scrollable[scrollable ? 'on' : 'off'],
+            // animation && isOpen ? theme.animation.on : theme.animation.off
+            animation && theme.fade[animation ? isOpen ? 'on' : 'off' : 'off']
+          )}
+        >
+          {buttonClose && (
+            <button className={classNames(theme.close)} onClick={close}>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width={closeSize}
+                height={closeSize}
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <line x1='18' y1='6' x2='6' y2='18' />
+                <line x1='6' y1='6' x2='18' y2='18' />
+              </svg>
+            </button>
+          )}
+          {children}
+        </div>
+      </div>
+    )
+  )
+
+  if (isBrowser) {
+    return ReactDOM.createPortal(modalComponent, document.getElementById('portal'))
+  } else {
+    return null
+  }
+}
+
+const Modal = React.forwardRef(ModalRef)
+export default Modal
+
+// Partials
+
+Modal.Header = ModalHeader
+Modal.Title = ModalTitle
+Modal.Body = ModalBody
+Modal.Footer = ModalFooter
+
+// StyledModalContent.propTypes = {
+//   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl', 'full']),
+//   buttonClose: PropTypes.bool,
+//   fade: PropTypes.bool,
+//   defaultOpened: PropTypes.bool,
+//   staticBackdrop: PropTypes.bool,
+//   blur: PropTypes.bool
+// }

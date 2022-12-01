@@ -17,6 +17,25 @@ html, body {
   html { scroll-behavior: auto; }
 }
 
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: #bebebe;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #aaaaaa;
+}
+
 /* Apply (custom components )*/
 
 @layer components {
@@ -70,15 +89,7 @@ html, body {
     @apply no-underline block py-2 space-y-2 font-medium transition-all p-5 border rounded-lg bg-white border-slate-200 hover:border-slate-200 hover:text-black hover:shadow-lg hover:shadow-[#00000008]
   }
 
-  /* Sidebar nav */
-
-  .docs-nav-link-sidebar {
-    @apply no-underline font-normal block px-4 py-2 my-1 rounded-full transition-all hover:text-black
-  }
-  .docs-nav-link-sidebar.active {
-    @apply font-medium bg-blue-200/10 text-blue-500
-  }
-
+ 
   /* docs Table (props list ) */
 
   table {
