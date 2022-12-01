@@ -67,7 +67,7 @@ function SidebarRef ({
 
   const SidebarComponent = (
     isOpen && (
-      <div className={classNames(theme.base, className && className)} blur={blur} {...rest}>
+      <div className={classNames(theme.base, className && className)} {...rest}>
         <div className={classNames(theme.backdrop, blur && theme.blur[blur ? 'on' : 'off'])} onClick={staticBackdrop === true ? handleStaticSidebar : close} />
         <div className={classNames('sidebar-content', theme.content)}>
           {buttonClose && (
