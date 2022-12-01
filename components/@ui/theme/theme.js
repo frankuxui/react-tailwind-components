@@ -4,13 +4,13 @@
 // Accordion
 
 const accordion = {
-  base: 'divide-y divide-gray-200 border-gray-200 dark:divide-gray-700 dark:border-gray-700',
+  base: 'overflow-hidden rounded-lg divide-y divide-gray-200 border-gray-200 bg-white',
   content: {
-    base: 'py-5 px-5 last:rounded-b-lg dark:bg-gray-900 first:rounded-t-lg'
+    base: 'py-4 px-4 last:rounded-b-lg first:rounded-t-lg'
   },
-  flush: {
-    off: 'rounded-lg border',
-    on: 'border-b'
+  border: {
+    off: '',
+    on: 'border'
   },
   title: {
     arrow: {
@@ -20,15 +20,15 @@ const accordion = {
         on: 'rotate-180'
       }
     },
-    base: 'flex w-full items-center justify-between first:rounded-t-lg last:rounded-b-lg py-5 px-5 text-left font-medium text-gray-500 dark:text-gray-400',
-    flush: {
-      off: 'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800',
-      on: '!bg-transparent dark:!bg-transparent'
+    base: 'flex w-full items-center justify-between last:rounded-b-lg py-4 px-4 text-left font-medium transition-colors text-gray-500 hover:bg-gray-50',
+    border: {
+      off: '',
+      on: ''
     },
     heading: '',
     open: {
-      off: '',
-      on: 'text-gray-900 bg-gray-100 dark:bg-gray-800 dark:text-white'
+      on: '',
+      off: ''
     }
   }
 }
@@ -132,7 +132,10 @@ const card = {
   base: 'flex flex-none flex-col relative break-inside-avoid min-w-0',
   content: {
     base: 'relative overflow-hidden rounded-2xl no-underline bg-white',
-    border: 'border border-gray-base'
+    border: {
+      on: 'border border-gray-base divide-y divide-gray-base',
+      off: ''
+    }
   },
   header: {
     base: 'flex flex-none p-4'

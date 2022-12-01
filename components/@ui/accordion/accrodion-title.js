@@ -8,7 +8,7 @@ export default function AccordionTitle ({
   className,
   ...rest
 }) {
-  const { flush, isOpen, setOpen } = useAccordionContext()
+  const { border, isOpen, setOpen } = useAccordionContext()
   const theme = useTheme().theme.accordion.title
 
   const onClick = () => typeof setOpen !== 'undefined' && setOpen()
@@ -17,7 +17,7 @@ export default function AccordionTitle ({
     <button
       className={classNames(
         theme.base,
-        theme.flush[flush ? 'on' : 'off'],
+        theme.border[border ? 'on' : 'off'],
         theme.open[isOpen ? 'on' : 'off'],
         className
       )}
@@ -25,7 +25,7 @@ export default function AccordionTitle ({
       type='button'
       {...rest}
     >
-      <Heading className={theme.heading} data-testid='flowbite-accordion-heading'>
+      <Heading className={theme.heading}>
         {children}
       </Heading>
       <svg

@@ -28,7 +28,7 @@ function CardContent ({ className, children, border, ...rest }) {
     <section
       className={classNames(
         theme.content.base,
-        border && theme.content.border,
+        theme.content.border[border ? 'on' : 'off'],
         className && className
       )} {...rest}
     >
@@ -38,7 +38,7 @@ function CardContent ({ className, children, border, ...rest }) {
 }
 
 // Header
-function CardHeader ({ className, children, border, ...rest }) {
+function CardHeader ({ className, children, ...rest }) {
   const theme = useTheme().theme.card
   return (
     <header
@@ -53,13 +53,12 @@ function CardHeader ({ className, children, border, ...rest }) {
 }
 
 // Body
-function CardBody ({ className, children, border, ...rest }) {
+function CardBody ({ className, children, ...rest }) {
   const theme = useTheme().theme.card
   return (
     <section
       className={classNames(
         theme.body.base,
-        border && theme.body.border,
         className && className
       )} {...rest}
     >
@@ -69,13 +68,12 @@ function CardBody ({ className, children, border, ...rest }) {
 }
 
 // Footer
-function CardFooter ({ className, children, border, ...rest }) {
+function CardFooter ({ className, children, ...rest }) {
   const theme = useTheme().theme.card
   return (
     <footer
       className={classNames(
         theme.footer.base,
-        border && theme.footer.border,
         className && className
       )} {...rest}
     >

@@ -8,7 +8,7 @@ import AccordionTitle from './accrodion-title'
 const AccordionComponent = ({
   alwaysOpen = false,
   children,
-  flush = false,
+  border = true,
   className,
   ...rest
 }) => {
@@ -18,16 +18,16 @@ const AccordionComponent = ({
   const panels = useMemo(
     () =>
       React.Children.map(children, (child, i) =>
-        cloneElement(child, { alwaysOpen, flush, isOpen: isOpen === i, setOpen: () => setOpen(i) })
+        cloneElement(child, { alwaysOpen, border, isOpen: isOpen === i, setOpen: () => setOpen(i) })
       ),
-    [alwaysOpen, children, flush, isOpen]
+    [alwaysOpen, children, border, isOpen]
   )
 
   return (
     <div
       className={classNames(
         theme.base,
-        theme.flush[flush ? 'on' : 'off'],
+        theme.border[border ? 'on' : 'off'],
         className && className
       )}
       {...rest}
