@@ -24,7 +24,7 @@ function ModalRef ({
   const theme = useTheme().theme.modal
   const [isOpen, setIsOpen] = React.useState(defaultOpened)
   const [isBrowser, setIsBrowser] = React.useState(false)
-
+  const contentRef = React.useRef(null)
   // Body overflow hidden
 
   React.useEffect(() => {
@@ -35,7 +35,7 @@ function ModalRef ({
 
   // Close callback
 
-  const close = React.useCallback(() => setIsOpen(false), [])
+  const close = React.useCallback((event) => setIsOpen(false), [])
   React.useImperativeHandle(
     ref,
     () => ({
@@ -44,78 +44,91 @@ function ModalRef ({
     }),
     [close]
   )
-
   // static backdrop callback
 
-  const handleStaticModal = () => {
-    document.querySelector('.modal').style.transform = 'scale(1.01)'
+  const handleStaticModal = React.useCallback(() => {
+    contentRef.current.style.transform = 'scale(1.01)'
     setTimeout(() => {
-      document.querySelector('.modal').style.transform = 'scale(1)'
+      contentRef.current.style.transform = 'scale(1)'
+    }, 90)
+  }, [])
+
+  // New close function
+  const handleClose = React.useCallback((e) => {
+    if (staticBackdrop) {
+      if (contentRef.current && !contentRef.current.contains(e.target)) {
+        handleStaticModal()
+      }
+    } else if (contentRef.current && !contentRef.current.contains(e.target)) {
+      setIsOpen(false)
     }
-    , 90)
-  }
+  }, [staticBackdrop, handleStaticModal])
 
   // key scape config
 
   const handleEscape = React.useCallback(
     (event) => {
-      if (staticBackdrop) {
-        if (event.keyCode === 27) handleStaticModal()
-      } else {
-        if (event.keyCode === 27) close()
-      }
+      if (event.keyCode === 27) handleClose(event)
     },
-    [close, staticBackdrop]
+    [handleClose]
   )
 
   React.useEffect(() => {
     setIsBrowser(true)
-    if (isOpen) document.addEventListener('keydown', handleEscape, false)
-    return () => {
-      document.removeEventListener('keydown', handleEscape, false)
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape, false)
+      document.addEventListener('click', handleClose, true)
+    } else {
+      return () => {
+        document.removeEventListener('keydown', handleEscape, false)
+        document.removeEventListener('click', handleClose, true)
+      }
     }
-  }, [handleEscape, isOpen])
+  }, [handleEscape, isOpen, handleClose])
 
   const modalComponent = (
     isOpen && (
-      <div className={classNames('modal', theme.base)} {...rest}>
-        <div
-          className={classNames(theme.backdrop, blur && theme.blur[blur ? 'on' : 'off'])}
-          onClick={staticBackdrop === true ? handleStaticModal : close}
-        />
-        <div
-          className={classNames(
-            'modal-content',
-            theme.content,
-            theme.size[size],
-            theme.border[border ? 'on' : 'off'],
-            theme.rounded[rounded],
-            theme.scrollable[scrollable ? 'on' : 'off'],
-            // animation && isOpen ? theme.animation.on : theme.animation.off
-            animation && theme.fade[animation ? isOpen ? 'on' : 'off' : 'off']
-          )}
-        >
-          {buttonClose && (
-            <button className={classNames(theme.close)} onClick={close}>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width={closeSize}
-                height={closeSize}
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <line x1='18' y1='6' x2='6' y2='18' />
-                <line x1='6' y1='6' x2='18' y2='18' />
-              </svg>
-            </button>
-          )}
-          {children}
+      <>
+        <div className={classNames('modal', theme.base)} {...rest}>
+          <div
+            className={classNames(theme.backdrop, blur && theme.blur[blur ? 'on' : 'off'])}
+          />
+          <div
+            ref={contentRef}
+            onClick={handleClose}
+            className={classNames(
+              'modal-content',
+              theme.content,
+              theme.size[size],
+              theme.border[border ? 'on' : 'off'],
+              theme.rounded[rounded],
+              theme.scrollable[scrollable ? 'on' : 'off'],
+              // animation && isOpen ? theme.animation.on : theme.animation.off
+              animation && theme.fade[animation ? isOpen ? 'on' : 'off' : 'off']
+            )}
+          >
+            {buttonClose && (
+              <button className={classNames(theme.close)} onClick={close}>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width={closeSize}
+                  height={closeSize}
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <line x1='18' y1='6' x2='6' y2='18' />
+                  <line x1='6' y1='6' x2='18' y2='18' />
+                </svg>
+              </button>
+            )}
+            {children}
+          </div>
         </div>
-      </div>
+      </>
     )
   )
 
