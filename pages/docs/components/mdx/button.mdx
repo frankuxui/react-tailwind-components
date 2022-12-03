@@ -46,6 +46,24 @@ import Button from 'components/@ui/button'
 </div>
 ```
 
+### Full width
+
+```jsx
+<div className='block space-y-2'>
+  <Button color='primary' fullWidth={true}>Button sm</Button>
+  <Button color='primary' fullWidth={true}>Button md</Button>
+</div>
+```
+
+#### With grid container
+
+```jsx
+<div className='grid space-y-2'>
+  <Button color='primary'>Button sm</Button>
+  <Button color='primary'>Button md</Button>
+</div>
+```
+
 ### With icons
 
 ```jsx
@@ -70,6 +88,28 @@ import Button from 'components/@ui/button'
 </div>
 ```
 
+```jsx
+<div className='flex items-center flex-wrap gap-2'>
+  <Button color='primary'>
+    <svg 
+      width={24} 
+      height={24} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth={2} 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10.25 6.75 4.75 12l5.5 5.25" />
+      <path d="M19.25 12H5" />
+    </svg>
+    <span>Button</span>
+  </Button>
+</div>
+```
+
 ### Link
 
 ```jsx
@@ -79,3 +119,4 @@ import Button from 'components/@ui/button'
   </Button>
 </div>
 ```
+

@@ -95,7 +95,7 @@ const avatar = {
 // Badge
 
 const badge = {
-  base: 'inline-flex items-center justify-center text-center flex-none rounded-full',
+  base: 'group inline-flex items-center justify-center text-center flex-none rounded-full',
   color: {
     primary: 'bg-primary text-white',
     secondary: 'bg-secondary text-white'
@@ -114,10 +114,14 @@ const button = {
   base: 'flex flex-none items-center justify-center flex-row font-normal rounded-md no-underline transition-colors',
   content: 'flex flex-none items-center justify-center flex-row space-x-2 no-underline',
   color: {
-    primary: 'bg-primary text-white hover:bg-primary-dark',
-    secondary: 'bg-secondary text-white hover:bg-secondary-dark'
+    primary: 'bg-primary text-white hover:bg-primary-dark focus:bg-primary-dark',
+    secondary: 'bg-secondary text-white hover:bg-secondary-dark focus:bg-secondary-dark'
   },
   disabled: 'opacity-40 pointer-events-none',
+  fullWidth: {
+    on: 'w-full',
+    off: ''
+  },
   size: {
     sm: 'h-8 text-sm px-4',
     md: 'h-10 text-base px-6',
@@ -131,10 +135,9 @@ const button = {
 const buttonGroup = {
   base: 'inline-flex',
   position: {
-    none: 'focus:!ring-2',
     start: 'rounded-r-none',
-    middle: '!rounded-none border-l-0 pl-0',
-    end: 'rounded-l-none border-l-0 pl-0'
+    middle: '!rounded-none',
+    end: 'rounded-l-none'
   }
 }
 
