@@ -1,8 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 import { useTheme } from 'components/@ui/hooks/useTheme'
+import ButtonGroup from './button-group'
 
-export default function Button ({
+const ButtonComponent = ({
   color = 'primary',
   disabled = false,
   size = 'md',
@@ -10,7 +11,7 @@ export default function Button ({
   className,
   as: Component = 'button',
   ...rest
-}) {
+}) => {
   const theme = useTheme().theme.button
   return (
     <Component
@@ -29,3 +30,9 @@ export default function Button ({
     </Component>
   )
 }
+
+ButtonComponent.displayName = 'Button'
+const Button = Object.assign(ButtonComponent, {
+  Group: ButtonGroup
+})
+export default Button

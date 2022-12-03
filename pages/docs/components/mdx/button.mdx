@@ -20,7 +20,7 @@ import Button from 'components/@ui/button'
 ### Colors
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Button color='primary'>Primary</Button>
   <Button color='secondary'>Secondary</Button>
 </div>
@@ -29,7 +29,7 @@ import Button from 'components/@ui/button'
 ### Disabled
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Button color='primary' disabled>Disabled</Button>
   <Button color='secondary' disabled>Disabled</Button>
 </div>
@@ -38,7 +38,7 @@ import Button from 'components/@ui/button'
 ### Sizes
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Button color='primary' size='sm'>Button sm</Button>
   <Button color='primary' size='md'>Button md</Button>
   <Button color='primary' size='lg'>Button lg</Button>
@@ -49,7 +49,7 @@ import Button from 'components/@ui/button'
 ### With icons
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Button color='primary'>
     <span>Button</span>
     <svg 
@@ -73,7 +73,7 @@ import Button from 'components/@ui/button'
 ### Link
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Button href="/" passHref as={Link} color='primary'>
     Button link
   </Button>

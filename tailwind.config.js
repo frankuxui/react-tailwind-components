@@ -14,6 +14,26 @@ module.exports = {
       roboto: ['Roboto', 'sans-serif']
     },
     extend: {
+
+      // Animation
+
+      animation: {
+        modal: 'modal 0.1s linear',
+        striped: 'striped 2s linear infinite'
+      },
+
+      // Backgrounds
+
+      backgroundImage: {
+        striped: 'linear-gradient(45deg,rgb(255 255 255 / 15%) 25%,rgb(0 0 0 / 0%) 25%,rgb(0 0 0 / 0%) 50%,rgb(255 255 255 / 15%) 50%,rgb(255 255 255 / 15%) 75%,rgb(0 0 0 / 0%) 75%,rgb(0 0 0 / 0%))'
+      },
+
+      backgroundSize: {
+        'striped-size': '2rem 2rem'
+      },
+
+      // Colors
+
       colors: {
         primary: colors.blue[700],
         'primary-light': colors.blue[100],
@@ -22,13 +42,6 @@ module.exports = {
         'secondary-light': colors.slate[200],
         'secondary-dark': colors.slate[700],
         'gray-base': colors.gray[200]
-      },
-      screens: {
-        sm: '640px', // => @media (min-width: 640px) { ... }
-        md: '1024px', // => @media (min-width: 768px) { ... }
-        lg: '1280px', // => @media (min-width: 1024px) { ... }
-        xl: '1400px', // => @media (min-width: 1280px) { ... }
-        xxl: '1920px' // => @media (min-width: 1920px) { ... }
       },
 
       // Keyframes
@@ -44,13 +57,25 @@ module.exports = {
             transform: 'scale(1)',
             opacity: 1
           }
+        },
+        striped: {
+          from: {
+            backgroundPosition: '2rem 0'
+          },
+          to: {
+            backgroundPosition: '0 0'
+          }
         }
       },
 
-      // Animation
+      // Screens
 
-      animation: {
-        modal: 'modal 0.1s linear'
+      screens: {
+        sm: '640px', // => @media (min-width: 640px) { ... }
+        md: '1024px', // => @media (min-width: 768px) { ... }
+        lg: '1280px', // => @media (min-width: 1024px) { ... }
+        xl: '1400px', // => @media (min-width: 1280px) { ... }
+        xxl: '1920px' // => @media (min-width: 1920px) { ... }
       }
     }
   },

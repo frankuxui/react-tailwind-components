@@ -8,6 +8,7 @@ import Alert from 'components/@ui/alert'
 import Avatar from 'components/@ui/avatar'
 import Badge from 'components/@ui/badge'
 import Button from 'components/@ui/button'
+import ButtonGroup from 'components/@ui/button/button-group'
 import Card from 'components/@ui/card'
 import Close from 'components/@ui/close'
 import Modal from 'components/@ui/modal'
@@ -27,6 +28,7 @@ export default {
   Avatar,
   Badge,
   Button,
+  ButtonGroup,
   Card,
   Close,
   Modal,

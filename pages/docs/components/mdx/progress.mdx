@@ -3,7 +3,7 @@ title: Progress
 slug: progress
 group: components
 description: Aqui va un texto quer describe al componente del cual estamos haciendo referencia en los siguientes ejemplos.
-isComing: true
+isComing: false
 ---
 
 ### Import
@@ -15,5 +15,205 @@ import Progress from 'components/@ui/progress'
 ### Usage
 
 ```jsx
-code
+<Progress progress={38}/>
+```
+
+### Sizes
+
+```jsx
+<div className='space-y-6'>
+  <Progress progress={20} size='xs'/>
+  <Progress progress={30} size='sm'/>
+  <Progress progress={40} size='md'/>
+  <Progress progress={50} size='lg'/>
+  <Progress progress={60} size='xl'/>
+  <Progress progress={70} size='2xl'/>
+</div>
+```
+
+### Striped
+
+```jsx
+<div className='space-y-6'>
+  <Progress progress={20} striped={true} size='xs'/>
+  <Progress progress={30} striped={true} size='sm'/>
+  <Progress progress={40} striped={true} size='md'/>
+  <Progress progress={50} striped={true} size='lg'/>
+  <Progress progress={60} striped={true} size='xl'/>
+  <Progress progress={70} striped={true} size='2xl'/>
+</div>
+```
+
+#### Tailwind striped config
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      backgroundImage: {
+        striped: 'linear-gradient(45deg,rgb(255 255 255 / 15%) 25%,rgb(0 0 0 / 0%) 25%,rgb(0 0 0 / 0%) 50%,rgb(255 255 255 / 15%) 50%,rgb(255 255 255 / 15%) 75%,rgb(0 0 0 / 0%) 75%,rgb(0 0 0 / 0%))'
+      },
+      backgroundSize: {
+        'striped-size': '2rem 2rem'
+      },
+    }
+  },
+}
+```
+#### Striped animation
+
+```jsx
+<Progress 
+  progress={40} 
+  striped={true} 
+  animated={true} 
+  size='md'
+/>
+```
+
+### Multiples bars
+
+#### Use multiple bar
+
+```jsx
+<Progress progress={20} multiple={[
+  {progress: 25, color: 'green'},
+  {progress: 20, color: 'yellow'},
+  {progress: 55, color: 'indigo'},
+]}/>
+```
+
+#### With sizes
+
+```jsx
+<Progress size='lg' multiple={[
+  {progress: 70, color: 'purple'},
+  {progress: 20, color: 'yellow'},
+  {progress: 10, color: 'primary'},
+]}/>
+```
+
+#### With striped background
+
+```jsx
+<Progress size='md' multiple={[
+  {progress: 20, color: 'rose', striped: true},
+  {progress: 30, color: 'teal', striped: true},
+  {progress: 50, color: 'purple', striped: true},
+]}/>
+```
+
+#### With striped animation
+
+```jsx
+<Progress 
+  size='md' 
+  multiple={[
+    {
+      progress: 20, 
+      color: 'rose', 
+      striped: true, 
+      animated: true
+    },
+    {
+      progress: 30, 
+      color: 'teal', 
+      striped: true, 
+      animated: true
+    },
+    {
+      progress: 50, 
+      color: 'purple', 
+      striped: true, 
+      animated: true
+    },
+  ]}
+/>
+```
+
+```jsx
+<Progress 
+  size='md' 
+  multiple={[
+    {
+      progress: 20, 
+      color: 'rose', 
+      striped: false, 
+      animated: false
+    },
+    {
+      progress: 30, 
+      color: 'teal', 
+      striped: false, 
+      animated: false
+    },
+    {
+      progress: 50, 
+      color: 'purple', 
+      striped: true, 
+      animated: true
+    },
+  ]}
+/>
+```
+
+### Labels
+
+```jsx
+<Progress 
+  progress={40} 
+  striped={true} 
+  animated={true} 
+  size='lg'
+  label="Label text"
+  labelPosition="inside"
+/>
+```
+
+#### Labels positions
+
+```jsx
+<Progress 
+  progress={40} 
+  striped={true} 
+  animated={true} 
+  size='md'
+  label="Label text"
+  labelPosition="outside"
+  labelProgress={true}
+/>
+```
+
+### Multiples bar with label
+
+```jsx
+<Progress 
+  size='2xl' 
+  multiple={[
+    {
+      progress: 20, 
+      color: 'rose', 
+      striped: false, 
+      animated: false,
+      label: 'Music',
+      labelPosition: 'inside'
+    },
+    {
+      progress: 30, 
+      color: 'green', 
+      striped: false, 
+      animated: false,
+      label: 'Video',
+      labelPosition: 'inside'
+    },
+    {
+      progress: 50, 
+      color: 'purple', 
+      striped: false, 
+      animated: false,
+      label: 'Documents',
+      labelPosition: 'inside'
+    },
+  ]}
+/>
 ```

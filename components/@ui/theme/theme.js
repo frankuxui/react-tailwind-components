@@ -126,6 +126,18 @@ const button = {
   }
 }
 
+// Button group
+
+const buttonGroup = {
+  base: 'inline-flex',
+  position: {
+    none: 'focus:!ring-2',
+    start: 'rounded-r-none',
+    middle: '!rounded-none border-l-0 pl-0',
+    end: 'rounded-l-none border-l-0 pl-0'
+  }
+}
+
 // Card
 
 const card = {
@@ -203,6 +215,52 @@ const modal = {
   footer: 'flex-shrink-0 flex items-center justify-end flex-wrap p-5 space-x-2'
 }
 
+// Progress
+
+const progress = {
+  base: 'flex w-full overflow-hidden bg-gray-100',
+  label: 'mb-1 flex justify-between font-medium',
+  bar: 'flex items-center justify-center text-center text-xs font-medium leading-none text-blue-100',
+  striped: {
+    on: 'bg-striped bg-striped-size',
+    off: ''
+  },
+  animated: {
+    on: 'animate-striped',
+    off: ''
+  },
+  rounded: {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    xl: 'rounded-xl',
+    '2xl': 'rounded-2xl',
+    '3xl': 'rounded-3xl'
+  },
+  color: {
+    primary: 'bg-primary',
+    secondary: 'bg-secondary',
+    red: 'bg-red-600',
+    green: 'bg-green-600',
+    yellow: 'bg-yellow-400',
+    indigo: 'bg-indigo-600',
+    purple: 'bg-purple-600',
+    cyan: 'bg-cyan-500',
+    rose: 'bg-rose-500',
+    sky: 'bg-sky-400',
+    teal: 'bg-teal-400'
+  },
+  size: {
+    xs: 'h-1',
+    sm: 'h-1.5',
+    md: 'h-2.5',
+    lg: 'h-4',
+    xl: 'h-5',
+    '2xl': 'h-6'
+  }
+}
+
 // Tag
 
 const tag = {
@@ -213,12 +271,6 @@ const tag = {
     secondary: 'bg-secondary text-white',
     'secondary-light': 'bg-secondary-light text-black'
   }
-}
-
-// Progress
-
-const progress = {
-  base: 'relative'
 }
 
 // Sidebar
@@ -309,11 +361,12 @@ export default {
   avatar,
   badge,
   button,
+  buttonGroup,
   card,
   close,
   modal,
-  tag,
   progress,
+  tag,
   sidebar,
   spinner,
   text

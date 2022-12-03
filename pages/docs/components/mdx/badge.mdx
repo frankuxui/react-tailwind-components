@@ -24,7 +24,7 @@ Ejemplo básico sobre la implementacion del component `Badge`.
 Ejemplo del uso de los `Badges` en sus diferentes colores, muy importante a la hora de determinar el tipo de información y etiquetado dependiendo del contexto en el que nos encontramos.
 
 ```jsx
-<div className='flex items-center space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Badge color='primary'>Primary</Badge>
   <Badge color='secondary'>Secondary</Badge>
 </div>
@@ -35,7 +35,7 @@ Ejemplo del uso de los `Badges` en sus diferentes colores, muy importante a la h
 Representación de los diferentes tamaños que están disponibles, para ello utilizamos la prop `size` con los valores siguientes disponibles `xs`, `sm` y `md`.
 
 ```jsx
-<div className='space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Badge size='xs' color='primary'>Extra small</Badge>
   <Badge size='sm' color='primary'>Small</Badge>
   <Badge size='md' color='primary'>Medium</Badge>
@@ -44,7 +44,7 @@ Representación de los diferentes tamaños que están disponibles, para ello uti
 ```
 
 ```jsx
-<div className='space-x-2'>
+<div className='flex items-center flex-wrap gap-2'>
   <Badge size='xs' color='primary'>1</Badge>
   <Badge size='sm' color='primary'>2</Badge>
   <Badge size='md' color='primary'>3</Badge>

@@ -31,12 +31,12 @@ const Sidebar = ({ sidebar }) => {
   return (
     <>
       <aside
-        className={cx('fixed left-0 top-0 h-full w-56 break-words pr-8 pb-6 pl-6 md:pl-0 pt-4 shrink-0 hidden border-r z-40 md:block md:sticky md:top-16 md:h-[calc(100vh_-_4.5rem)] md:bg-transparent md:z-10 bg-white', sidebarOpen && '!block')}
+        className={cx('fixed overflow-y-auto left-0 top-0 h-full max-w-5xl break-words pr-8 pb-6 pl-6 md:pl-0 pt-4 shrink-0 hidden border-r z-40 md:block md:sticky md:top-16 md:h-[calc(100vh_-_4.5rem)] md:bg-transparent md:z-10 bg-white', sidebarOpen && '!block')}
       >
         {sidebarOpen && (
           <div className='flex md:hidden items-center justify-between mb-6 -mr-6'>
             <Link href='/' passHref className='font-bold text-lg no-underline'>
-              Development tools
+              Components
             </Link>
             <Close sidebarClose={handleSidebar} />
           </div>

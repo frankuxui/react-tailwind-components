@@ -89,10 +89,8 @@ function ModalRef ({
   const modalComponent = (
     isOpen && (
       <>
-        <div className={classNames('modal', theme.base)} {...rest}>
-          <div
-            className={classNames(theme.backdrop, blur && theme.blur[blur ? 'on' : 'off'])}
-          />
+        <div className={classNames('modal', theme.base, blur && theme.blur[blur ? 'on' : 'off'])} {...rest}>
+          {/* <div className={classNames(theme.backdrop)} /> */}
           <div
             ref={contentRef}
             onClick={handleClose}

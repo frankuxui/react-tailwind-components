@@ -20,7 +20,7 @@ import Avatar from 'components/@ui/avatar'
 ### Rounded
 
 ```jsx
-<div className="flex items-center space-x-2">
+<div className="flex items-center flex-wrap gap-2">
   <Avatar image='https://randomuser.me/api/portraits/men/35.jpg' rounded={true} />
 </div>
 ```
@@ -28,7 +28,7 @@ import Avatar from 'components/@ui/avatar'
 ### Sizes
 
 ```jsx
-<div className="flex items-center flex-wrap space-x-2">
+<div className="flex items-center flex-wrap gap-2">
   <Avatar size='xs' image='/images/avatar.png'/>
   <Avatar size='sm' image='/images/avatar.png' />
   <Avatar size='md' image='/images/avatar.png' />
@@ -41,7 +41,7 @@ import Avatar from 'components/@ui/avatar'
 ### Placeholder
 
 ```jsx
-<div className="flex items-center space-x-2">
+<div className="flex items-center flex-wrap gap-2">
   <Avatar />
   <Avatar rounded={true} />
 </div>
@@ -50,7 +50,7 @@ import Avatar from 'components/@ui/avatar'
 
 ```jsx
 <>
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar size='xs' name="Frank" />
     <Avatar size='sm' name="Pedro" />
     <Avatar size='md' name="Maria" />
@@ -59,7 +59,7 @@ import Avatar from 'components/@ui/avatar'
     <Avatar size='2xl' name="Andres" />
   </div>
   <br/>
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar rounded={true} size='xs' name="Frank" />
     <Avatar rounded={true} size='sm' name="Pedro" />
     <Avatar rounded={true} size='md' name="Maria" />
@@ -73,7 +73,7 @@ import Avatar from 'components/@ui/avatar'
 ### Status
 
 ```jsx
-<div className="flex items-center space-x-2">
+<div className="flex items-center flex-wrap gap-2">
   <Avatar
     image="https://randomuser.me/api/portraits/men/35.jpg"
     status="online"
@@ -102,28 +102,28 @@ import Avatar from 'components/@ui/avatar'
 
 ```jsx
 <>
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar color='primary' name="Frank" />
     <Avatar color='primary-light' name="Pedro" />
     <Avatar color='secondary' name="Maria" />
     <Avatar color='secondary-light' name="Maria" />
   </div>
   <br />
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar rounded={true} color='primary' name="Carmen" />
     <Avatar rounded={true} color='primary-light' name="Jhon" />
     <Avatar rounded={true} color='secondary' name="Havana" />
     <Avatar rounded={true} color='secondary-light' name="Yony" />
   </div>
   <br />
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar color='primary'/>
     <Avatar color='primary-light' />
     <Avatar color='secondary' />
     <Avatar color='secondary-light'/>
   </div>
   <br />
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center flex-wrap gap-2">
     <Avatar rounded={true} color='primary'/>
     <Avatar rounded={true} color='primary-light' />
     <Avatar rounded={true} color='secondary' />
