@@ -15,7 +15,7 @@ const OpenGraph = ({ title, description, image }) => {
       />
       <meta
         property='og:image'
-        content={image}
+        content={image || 'https://react-tailwind-components-xi.vercel.app/_next/image?url=%2Fimages%2Fpexels-photo-13836783.jpeg&w=3840&q=75'}
       />
       <meta property='og:image:width' content='1200' />
       <meta property='og:image:height' content='630' />
@@ -33,7 +33,7 @@ const OpenGraph = ({ title, description, image }) => {
       />
       <meta
         name='twitter:image'
-        content={image}
+        content={image || 'https://react-tailwind-components-xi.vercel.app/_next/image?url=%2Fimages%2Fpexels-photo-13836783.jpeg&w=3840&q=75'}
       />
     </>
   )
