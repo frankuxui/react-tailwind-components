@@ -5,9 +5,9 @@ import DefaultLayout from 'components/docs/layout/layout-default'
 export default function Home () {
   return (
     <>
-      <DefaultLayout htmlTitle='React tailwind components' htmlDescription='Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.' />
-      <div className='docs-container'>
-        <main className='docs-main'>
+      <DefaultLayout title='React tailwind components' description='Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.' />
+      <div className='flex flex-col justify-between min-h-screen'>
+        <main className='pt-16 px-8 flex flex-col justify-center items-center'>
           <Hero />
         </main>
         <Footer />

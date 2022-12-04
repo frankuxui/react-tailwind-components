@@ -6,7 +6,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import LayoutDocs from '../../../components/docs/layout/layout-docs'
 import { components } from 'components/docs/components/mdx'
-
 import remarkGfm from 'remark-gfm'
 
 //
@@ -42,9 +41,10 @@ const Page = ({ sidebar, frontMatter: { title, description }, mdxSource }) => {
   return (
     <LayoutDocs
       title={title}
+      pageTitle={title}
       description={description}
+      pageDescription={description}
       sidebar={sidebar}
-      toc
     >
       <MDXRemote {...mdxSource} components={components} />
     </LayoutDocs>

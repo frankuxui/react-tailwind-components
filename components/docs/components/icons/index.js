@@ -17,25 +17,6 @@ export const IconView = ({ size, ...rest }) => {
   )
 }
 
-export const IconPackage = ({ size, ...rest }) => {
-  return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={size || '24'}
-      height={size || '24'}
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...rest}
-    >
-      <path d='M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0' />
-    </svg>
-  )
-}
-
 export const IconComponent = ({ size, ...rest }) => {
   return (
     <svg
@@ -76,46 +57,6 @@ export const IconTheme = ({ size, ...rest }) => {
         d='M16.8586 16.8749C15.687 18.0465 15.687 19.946 16.8586 21.1175C18.0302 22.2891 19.9297 22.2891 21.1013 21.1175C22.2728 19.946 22.2728 18.0465 21.1013 16.8749L18.9799 14.7536L16.8586 16.8749Z'
         fill='currentColor'
       />
-    </svg>
-  )
-}
-
-export const IconContext = ({ size, ...rest }) => {
-  return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={size || '24'}
-      height={size || '24'}
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...rest}
-    >
-      <path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' />
-    </svg>
-  )
-}
-
-export const IconDeploy = ({ size, ...rest }) => {
-  return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={size || '24'}
-      height={size || '24'}
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      {...rest}
-    >
-      <rect x='2' y='3' width='20' height='14' rx='2' ry='2' />
-      <line x1='8' y1='21' x2='16' y2='21' />
-      <line x1='12' y1='17' x2='12' y2='21' />
     </svg>
   )
 }

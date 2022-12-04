@@ -1,0 +1,10 @@
+{
+  "title": "React Tailwind components",
+  "version": "v1.0",
+  "description": "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.",
+  "autor": "@frankuxui",
+  "website": "https://react-tailwind-components-xi.vercel.app",
+  "cover": "https://react-tailwind-components-xi.vercel.app/images/pexels-photo-13836783.jpeg",
+  "coverWidth": "1200",
+  "coverheight": "630"
+}

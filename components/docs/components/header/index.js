@@ -18,7 +18,7 @@ const Header = () => {
         <div className='flex items-center justify-start'>
           <Hamburger sidebarOpen={handleSidebar} />
           <Link href='/' className='no-underline font-medium text-lg' passHref>
-            Development tools
+            Components
           </Link>
         </div>
         <span className='text-xs px-3 py-1 rounded-md text-white bg-black'>Version 2.0</span>

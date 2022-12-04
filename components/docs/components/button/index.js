@@ -1,10 +1,11 @@
 import React from 'react'
+import classNames from 'classnames'
 import Link from 'next/link'
 
 export const ButtonStarted = () => {
   return (
     <Link
-      href='/docs/getting-started/start'
+      href='/docs/components'
       passHref
       className='no-underline flex items-center justify-center px-4 py-2 rounded-lg space-x-2 font-medium group bg-[#0076f4] text-white hover:bg-[#006ee3]'
     >
@@ -48,17 +49,12 @@ export const ButtonGithub = () => {
   )
 }
 
-//
 // Default button
 
 export const Button = ({ className, onClick, children, ...rest }) => {
   return (
-    <button onClick={onClick} className={cx('no-underline flex items-center justify-center px-4 py-2 rounded-lg space-x-2 font-medium bg-[#0076f4] text-white hover:bg-[#006ee3]', className && className)} {...rest}>
+    <button onClick={onClick} className={classNames('no-underline flex items-center justify-center px-4 py-2 rounded-lg space-x-2 font-medium bg-[#0076f4] text-white hover:bg-[#006ee3]', className && className)} {...rest}>
       {children}
     </button>
   )
-}
-
-function cx (...classNames) {
-  return classNames.filter(Boolean).join(' ')
 }

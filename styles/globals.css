@@ -17,109 +17,46 @@ html, body {
   html { scroll-behavior: auto; }
 }
 
-.scrollbar::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar {
+  width: 6px;
   background-color: #F5F5F5;
 }
 
-.scrollbar::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   border-radius: 4px;
   background-color: #F5F5F5;
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   border-radius: 999px;
   background-color: #bebebe;
 }
 
-.scrollbar::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background-color: #aaaaaa;
 }
+
 
 /* Apply (custom components )*/
 
 @layer components {
-
-  /* layout */
-
-  .docs-container {
-    @apply flex flex-col justify-between min-h-screen
-  }
-  .docs-main {
-    @apply pt-16 px-8 flex flex-col justify-center items-center
-  }
-
+  h1 { @apply text-4xl md:text-5xl font-bold font-roboto }
+  h2 { @apply text-3xl md:text-4xl font-bold font-roboto }
+  h3 { @apply text-2xl md:text-3xl font-bold font-roboto }
+  h4 { @apply text-xl md:text-2xl font-bold font-roboto }
+  h5 { @apply text-base md:text-lg font-medium font-roboto }
+  h6 { @apply text-base font-bold font-roboto }
   
-
- 
-  /* Home */
-
-  .docs-card {
-    @apply flex flex-col border-2 cursor-pointer break-inside-avoid p-6 rounded-xl space-y-2 transition-colors no-underline font-normal
-  }
-  .docs-card:hover{
-    @apply text-blue-600 border-blue-600
-  }
-  
-  /* Typography */
-
-  h1 {
-    @apply text-4xl md:text-5xl font-bold font-roboto
-  }
-  h2 {
-    @apply text-3xl md:text-4xl font-bold font-roboto
-  }
-  h3 {
-    @apply text-2xl md:text-3xl font-bold font-roboto
-  }
-  h4 {
-    @apply text-xl md:text-2xl font-bold font-roboto
-  }
-  h5 {
-    @apply text-base md:text-lg font-medium font-roboto
-  }
-  h6 {
-    @apply text-base font-bold font-roboto 
-  }
-  
-  
-  /* Nav */
-
-  .docs-nav-link-card {
-    @apply no-underline block py-2 space-y-2 font-medium transition-all p-5 border rounded-lg bg-white border-slate-200 hover:border-slate-200 hover:text-black hover:shadow-lg hover:shadow-[#00000008]
-  }
-
- 
-  /* docs Table (props list ) */
-
-  table {
-    @apply border-collapse mt-8 table-auto w-full text-sm text-left
-  }
-  thead th {
-    @apply font-medium
-  }
-  thead tr {
-    @apply border-b border-slate-200 bg-slate-50 
-  }
-  tbody tr {
-    @apply border-b border-slate-200
-  }
-  th, td {
-    @apply p-4 
-  }
-
-  /* Docs content */
+  table { @apply border-collapse mt-8 table-auto w-full text-sm text-left }
+  thead th { @apply font-medium }
+  thead tr { @apply border-b border-slate-200 bg-slate-50 }
+  tbody tr { @apply border-b border-slate-200 }
+  th, td { @apply p-4 }
 
   h2[id], h3[id], h4[id], h5[id], h6[id]{
     @apply pt-[7rem] -mt-[5rem] mb-8
   }
   
-  
- 
-  .footer {
-    @apply w-full py-8 px-8 mt-14 border-t text-center border-slate-300
-  }
-
   .toc-content{
     @apply sticky top-8 max-h-[calc(100vh_-_8rem)]
   }

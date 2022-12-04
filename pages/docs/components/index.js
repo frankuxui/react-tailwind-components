@@ -11,14 +11,13 @@ const Componentes = ({ components }) => {
   return (
     <LayoutDocs
       title='Componentes'
-      pageSection={null}
-      pageSectionDescription='La interfaz de usuario de Gomotor proporciona componentes preconstruidos para ayudar a construir el proyectos más rápido y eficiente. Aquí hay una descripción general de los componentes disponibles.'
+      description='La ui proporciona componentes preconstruidos para ayudar a construir el proyectos más rápido y eficiente. Aquí hay una descripción general de los componentes disponibles.'
       sidebar={components}
     >
       <ul className='columns-1 sm:columns-2 md:columns-2 lg:columns-3 gap-4'>
         {components && components.map((item, index) => (
           <li key={index} className='break-inside-avoid mb-4'>
-            <Link href={`/docs/components/${item.slug}`} passHref className='docs-nav-link-card group'>
+            <Link href={`/docs/components/${item.slug}`} passHref className='no-underline block py-2 space-y-2 font-medium transition-all p-5 border rounded-lg bg-white border-slate-200 hover:border-slate-200 hover:text-black hover:shadow-lg hover:shadow-[#00000008] group'>
               <div className='font-base flex items-center justify-between m-0'>
                 {item.frontMatter.title}
                 <span className='hidden group-hover:block'>

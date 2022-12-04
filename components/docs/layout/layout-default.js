@@ -1,18 +1,25 @@
 import React from 'react'
 import Head from 'next/head'
-import { Router } from 'next/router'
+import { useRouter } from 'next/router'
 import OpenGraph from 'components/docs/components/open-graph'
+import { content } from 'pages/api/data'
 
-const DefaultLayout = ({ htmlTitle, htmlDescription, image }) => {
-  const path = Router?.asPath
+const DefaultLayout = ({ title, description }) => {
+  const router = useRouter()
+  const path = router?.asPath
+
   return (
     <>
       <Head>
-        <title>{htmlTitle}</title>
-        <meta name='description' content={htmlDescription} />
+        <title>{`${title} - ${content.title} ${content.version}` || content.title}</title>
+        <meta name='description' content={description || content.description} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='description' content={htmlDescription} />
-        <OpenGraph title={htmlTitle} description={htmlDescription} image={image} path={path} />
+        <meta name='description' content={description || content.description} />
+        <OpenGraph
+          title={`${title} - ${content.title} ${content.version}` || content.title}
+          description={description}
+          path={path}
+        />
       </Head>
     </>
   )
