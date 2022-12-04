@@ -11,7 +11,8 @@ const OpenGraph = ({ title, description, path, cover, coverWidth, coverheight, i
       <meta property='og:url' content={`${content.website}/${path}`} />
       <meta property='og:image' content={image || content.cover} />
       <meta property='og:image:width' content={coverWidth || content.coverWidth} />
-      <meta property='og:image:height' content={coverheight || content.coverheight} />
+      <meta property='og:image:height' content={coverheight || content.coverHeight} />
+      <meta property='fb:app_id' content='928977633900253' />
 
       {/* Twitter meta */}
       <meta name='twitter:card' content='summary_large_image' />
