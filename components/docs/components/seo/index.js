@@ -7,7 +7,6 @@ const Seo = ({ title, description }) => {
     <NextSeo
       title={title}
       description={description}
-      canonical={config.seo.siteUrl}
       openGraph={{ title, description }}
       titleTemplate={config.seo.titleTemplate}
       /* openGraph={{

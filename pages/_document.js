@@ -4,7 +4,7 @@ export default function Document () {
   return (
     <Html lang='es'>
       <Head>
-        <meta name='theme-color' content='#33D1FF' />
+        <meta name='theme-color' content='#1d4ed8' />
         <link rel='icon' href='/images/favicon.ico' />
         <link rel='apple-touch-icon' href='/images/apple-touch-icon.png' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />

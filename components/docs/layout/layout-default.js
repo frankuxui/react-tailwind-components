@@ -16,7 +16,7 @@ const DefaultLayout = ({ title, description }) => {
         <meta name='description' content={description || content.description} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content={description || content.description} />
-        <Seo />
+        <Seo title={title} description={description} />
         {/* <OpenGraph
           title={title}
           description={description}
