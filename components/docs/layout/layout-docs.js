@@ -3,12 +3,12 @@ import Sidebar from 'components/docs/components/sidebar'
 import Header from 'components/docs/components/header'
 import Toc from 'components/docs/components/mdx/toc'
 import Footer from 'components/docs/views/footer'
-import DefaultLayout from 'components/docs/layout/layout-default'
+import Seo from '../components/seo'
 
 const LayoutDocs = ({ sidebar, children, title, pageTitle, description, pageDescription }) => {
   return (
     <>
-      <DefaultLayout title={title} description={description} />
+      <Seo title={title} description={description} />
       <Header />
       <div className='flex w-full max-w-[90rem] m-auto md:px-4'>
         <Sidebar sidebar={sidebar} />

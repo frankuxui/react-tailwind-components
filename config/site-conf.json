@@ -1,4 +1,6 @@
 {
+  "title": "React Tailwind components",
+  "version": "v1.0",
   "copyright": "Copyright © {{date}} Segun Adebayo. All Rights Reserved.",
   "author": {
     "name": "Frank Esteban",
@@ -15,24 +17,27 @@
     "twitter": {
       "cardType": "summary_large_image"
     },
+    "facebook": {
+      "appId": "928977633900253"
+    },
     "openGraph": {
       "type": "website",
       "url": "https://react-tailwind-components-xi.vercel.app",
       "title": "React Tailwind components",
       "description": "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.",
-      "siteName": "React Tailwind components",
+      "site_name": "React Tailwind components: Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.",
       "images": [
         {
           "url": "https://react-tailwind-components-xi.vercel.app/images/pexels-photo-13836783.jpeg",
           "width": 1240,
           "height": 630,
-          "alt": "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
+          "alt": "React Tailwind components: Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
         },
         {
           "url": "https://react-tailwind-components-xi.vercel.app/images/pexels-photo-13836783.jpeg",
           "width": 1200,
           "height": 630,
-          "alt": "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
+          "alt": "React Tailwind components: Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
         }
       ]
     }

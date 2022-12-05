@@ -1,8 +1,12 @@
 {
-  "homePage": {
+  "homepage": {
+    "seo": {
+      "title": "React Tailwind components - Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo.",
+      "description" : "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
+    },
     "title": {
-      "main": "Create accessible React apps",
-      "highlighted": "with speed"
+      "header": "React Tailwind components",
+      "lead": "Guía de vistas, componentes y pautas a seguir para el uso de buenas prácticas en el desarrollo."
     }
   }
 }

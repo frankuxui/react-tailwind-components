@@ -1,4 +1,4 @@
-import config from '../../../config/seo.json'
+import config from '../../../config/site-conf.json'
 
 export function getSeo (options = {}) {
   const { omitOpenGraphImage } = options

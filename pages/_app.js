@@ -17,7 +17,9 @@ function MyApp ({ Component, pageProps }) {
         <link rel='apple-touch-icon' href='/images/apple-touch-icon.png' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
       </Head>
-      <DefaultSeo {...seo} />
+      <DefaultSeo
+        {...seo}
+      />
       <APPContext>
         <Component {...pageProps} />
       </APPContext>
