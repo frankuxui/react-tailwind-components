@@ -11,6 +11,7 @@ import Button from 'components/@ui/button'
 import ButtonGroup from 'components/@ui/button/button-group'
 import Card from 'components/@ui/card'
 import Close from 'components/@ui/close'
+import Flex from 'components/@ui/flex'
 import Modal from 'components/@ui/modal'
 import Progress from 'components/@ui/progress'
 import Sidebar from 'components/@ui/sidebar'
@@ -31,6 +32,7 @@ export default {
   ButtonGroup,
   Card,
   Close,
+  Flex,
   Modal,
   Progress,
   Sidebar,

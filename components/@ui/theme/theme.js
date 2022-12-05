@@ -1,6 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 // eslint-disable-next-line import/no-anonymous-default-export
 
+import { spacing } from '../utils/spacing'
+
 // Accordion
 
 const accordion = {
@@ -169,6 +171,12 @@ const card = {
 
 const close = {
   base: 'flex flex-none items-center justify-center cursor-pointer rounded-full p-2 hover:bg-slate-900/10 transition-colors'
+}
+
+// Flex
+
+const flex = {
+  base: 'flex w-full'
 }
 
 // Modal
@@ -367,6 +375,7 @@ export default {
   buttonGroup,
   card,
   close,
+  flex,
   modal,
   progress,
   tag,

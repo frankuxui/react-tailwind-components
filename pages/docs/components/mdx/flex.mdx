@@ -1,0 +1,38 @@
+---
+title: Flex
+slug: flex
+group: components
+description: Muestra un diálogo de alerta con un mensaje opcional, y aguardará hasta que el usuario cierre la ventana de diálogo.
+---
+
+### Import
+
+```js
+import Flex from 'components/@ui/flex'
+```
+
+### Usage
+
+```jsx
+<Flex>Example</Flex>
+```
+
+### Vertical space
+
+```jsx
+<Flex className="text-white">
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-indigo-500">01</Flex>
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-indigo-500">02</Flex>
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-indigo-500">03</Flex>
+</Flex>
+```
+
+### Horizontal space
+
+```jsx
+<Flex spaceY='4' direction='column' className="text-white">
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-emerald-500">01</Flex>
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-emerald-500">02</Flex>
+  <Flex className="p-4 flex items-center justify-center rounded-lg bg-emerald-500">03</Flex>
+</Flex>
+```

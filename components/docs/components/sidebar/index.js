@@ -75,7 +75,7 @@ const Sidebar = ({ sidebar }) => {
               <li key={index}>
                 <Link
                   href={{ pathname: `/docs/${categorie}/${item.frontMatter?.title?.split(' ').join('-').toLowerCase()}` }} passHref
-                  className={classNames('flex justify-start items-center no-underline font-normal px-4 py-2 my-1 rounded-full transition-all hover:text-black', item.frontMatter?.slug?.split(' ').join('-').toLowerCase() === slug.split('#')[0] ? 'font-bold text-blue-500' : '')}
+                  className={classNames(item.frontMatter.isComing && 'opacity-70 pointer-events-none', 'flex justify-start items-center no-underline font-normal px-4 py-2 my-1 rounded-full transition-all hover:text-black', item.frontMatter?.slug?.split(' ').join('-').toLowerCase() === slug.split('#')[0] ? 'font-bold text-blue-500' : '')}
                   onClick={handleSidebar}
                 >
 
