@@ -1,10 +1,19 @@
 import React from 'react'
 import classNames from 'classnames'
 import { useTheme } from 'components/@ui/hooks/useTheme'
+import Ripple from 'components/@ui/ripple'
+import { useRipple } from 'components/@ui/hooks/useRipple'
 
-export default function Close ({ className, size, onClose, customIcon, ...rest }) {
+export default function Close ({
+  className,
+  size,
+  onClose,
+  ripple = true,
+  customIcon,
+  ...rest
+}) {
   const theme = useTheme().theme.close
-
+  const { addRipple, rippleArray } = useRipple()
   const defaultICon = (
     <svg
       style={{ width: size || 24, height: size || 24 }}
@@ -25,9 +34,13 @@ export default function Close ({ className, size, onClose, customIcon, ...rest }
       )}
       aria-label='close'
       type='button'
+      onMouseDown={(event) => addRipple(event)}
       onClick={onClose}
       {...rest}
     >
+      {ripple && (
+        <Ripple rippleArray={rippleArray} color='#00000042' />
+      )}
       <>
         {customIcon || defaultICon}
       </>

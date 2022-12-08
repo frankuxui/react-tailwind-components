@@ -1,8 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 // eslint-disable-next-line import/no-anonymous-default-export
 
-import { spacing } from '../utils/spacing'
-
 // Accordion
 
 const accordion = {
@@ -167,10 +165,47 @@ const card = {
   }
 }
 
+// Checkbox
+
+const checkbox = {
+  base: 'relative flex-none overflow-hidden inline-flex items-center cursor-pointer no-underline rounded-full p-2 text-primary transition-colors hover:bg-blue-500/10 group-hover:bg-blue-500/10',
+  label: 'inline-flex items-center cursor-pointer align-middle -ml-3 pl-3 group',
+  input: 'opacity-0 scale-100 appearance-none absolute top-0 left-0 w-full h-full z-[1] outline-none shadow-none cursor-pointer bg-transparent',
+  disabled: {
+    on: 'opacity-50 pointer-events-none',
+    off: ''
+  },
+  icon: {
+    base: 'flex-none',
+    size: {
+      sm: 'w-5 h-5',
+      md: 'w-6 h-6',
+      lg: 'w-7 h-7',
+      xl: 'w-9 h-9'
+    }
+  }
+}
+
 // Close
 
 const close = {
-  base: 'flex flex-none items-center justify-center cursor-pointer rounded-full p-2 hover:bg-slate-900/10 transition-colors'
+  base: 'relative text-medium overflow-hidden flex flex-none items-center justify-center cursor-pointer rounded-full p-2 hover:bg-slate-600/10 transition-colors focus:bg-slate-600/10'
+}
+
+// Input
+
+const input = {
+  base: 'block w-full border-2 outline-0 border-transparent rounded-md shadow-none transition-colors focus:border-primary focus:bg-white',
+  variant: {
+    filled: 'bg-gray-100 hover:bg-gray-200',
+    outline: 'bg-white border-gray-300 hover:border-gray-400'
+  },
+  size: {
+    sm: 'h-8 text-sm px-3',
+    md: 'h-10 text-base px-4',
+    lg: 'h-12 text-lg px-5',
+    xl: 'h-14 text-xl px-5'
+  }
 }
 
 // Flex
@@ -374,7 +409,9 @@ export default {
   button,
   buttonGroup,
   card,
+  checkbox,
   close,
+  input,
   flex,
   modal,
   progress,

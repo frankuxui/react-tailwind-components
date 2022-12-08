@@ -10,7 +10,9 @@ import Badge from 'components/@ui/badge'
 import Button from 'components/@ui/button'
 import ButtonGroup from 'components/@ui/button/button-group'
 import Card from 'components/@ui/card'
+import Checkbox from 'components/@ui/checkbox'
 import Close from 'components/@ui/close'
+import Input from 'components/@ui/input'
 import Flex from 'components/@ui/flex'
 import Modal from 'components/@ui/modal'
 import Progress from 'components/@ui/progress'
@@ -31,7 +33,9 @@ export default {
   Button,
   ButtonGroup,
   Card,
+  Checkbox,
   Close,
+  Input,
   Flex,
   Modal,
   Progress,

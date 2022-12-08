@@ -3,17 +3,134 @@ title: Input
 slug: input
 group: components
 description: Muestra un diálogo de alerta con un mensaje opcional, y aguardará hasta que el usuario cierre la ventana de diálogo.
-isComing: true
+isComing: false
 ---
 
-### Import
+## Import
 
 ```js
 import Input from 'components/@ui/input'
 ```
 
-### Usage
+## Usage
 
 ```jsx
-<!-- Code -->
+<Input type='text' placeholder='Basic input'/>
+```
+
+## Variants
+
+### Filled
+
+```jsx
+<Input 
+  className='flex-1' 
+  type='text' 
+  variant='filled' 
+  placeholder='Outline'
+/>
+```
+
+### Outline
+
+```jsx
+<Input 
+  className='flex-1' 
+  type='text' 
+  variant='filled' 
+  placeholder='Filled'
+/>
+```
+
+## Sizes
+
+```jsx
+<div className='flex items-center flex-wrap gap-2'>
+  <Input
+    type='text' 
+    variant='filled'
+    size='sm'
+    placeholder='Input sm'
+  />
+  <Input
+    type='text' 
+    variant='filled' 
+    size='md'
+    placeholder='Input md'
+  />
+  <Input
+    type='text' 
+    variant='filled'
+    size='lg'
+    placeholder='Input lg'
+  />
+  <Input
+    type='text' 
+    variant='filled'
+    size='xl'
+    placeholder='Input xl'
+  />
+</div>
+```
+
+## With label
+
+```jsx
+<div className='flex items-center flex-wrap gap-2'>
+  <label htmlFor='inputLabel'>Input label</label>
+  <Input
+    type='text' 
+    id='inputLabel'
+    name='inputLabel'
+    placeholder='Input with label'
+  />
+</div>
+```
+
+## Validation
+
+```jsx
+function Example(){
+  return (
+    <div className='flex items-center flex-wrap gap-2'>
+      <label htmlFor='validateSuccess' className='font-medium'>Name</label>
+      <Input
+        type='text' 
+        id='validateSuccess'
+        name='validateSuccess'
+        placeholder='Input with label'
+      />
+      <span className='text-sm'>Looks good!</span>
+    </div>
+  )
+}
+```
+
+## Basic form
+
+```jsx
+<div className='flex items-center flex-wrap gap-2'>
+  <Input
+    type='text' 
+    id='inputLabel'
+    name='inputLabel'
+    placeholder='Searh now'
+    className='flex-1'
+  />
+  <Button>Example</Button>
+</div>
+```
+
+```jsx
+<div className='flex items-center flex-wrap gap-2'>
+  <Input
+    type='text' 
+    id='inputLabel'
+    name='inputLabel'
+    variant='outline' 
+    placeholder='Searh now'
+    className='flex-1'
+  />
+  <Button>Example</Button>
+</div>
 ```

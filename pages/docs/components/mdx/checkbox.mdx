@@ -3,7 +3,7 @@ title: Checkbox
 slug: checkbox
 group: components
 description: Muestra un diálogo de alerta con un mensaje opcional, y aguardará hasta que el usuario cierre la ventana de diálogo.
-isComing: true
+isComing: false
 ---
 
 ### Import
@@ -12,8 +12,100 @@ isComing: true
 import Checkbox from 'components/@ui/checkbox'
 ```
 
-### Usage
+## Usage
 
 ```jsx
-<!-- Code -->
+<Checkbox
+  id='check1'
+  name='check1'
+/>
+```
+
+## With label
+
+```jsx
+<Checkbox
+  id='withLabel'
+  name='withLabel'
+  label='Label'
+/>
+```
+
+### Large content
+
+```jsx
+<Checkbox
+  id='withLargeContent'
+  name='withLargeContent'
+  label='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+/>
+```
+
+## Sizes
+
+```jsx
+function Example(){
+  const list = ['sm', 'md', 'lg', 'xl']
+  return (
+    <div className='flex items-center space-x-2'>
+      {list.map((item, index) => (
+        <Checkbox
+          key={index}
+          id={item}
+          name={item}
+          size={item}
+          value={item}
+          checked={item}
+        />
+      ))}
+    </div>
+  )
+}
+```
+
+## Default checked
+
+```jsx
+<Checkbox
+  id='checkbox'
+  name='checkbox'
+  checked={true}
+/>
+```
+
+## Disabled
+
+```jsx
+<>
+  <Checkbox
+    id='checkbox'
+    name='checkbox'
+    checked={true}
+    disabled
+  />
+  <Checkbox
+    id='checkbox'
+    name='checkbox'
+    disabled
+  />
+</>
+```
+
+```jsx
+<Checkbox
+  id='withLabelDisabled'
+  name='withLabelDisabled'
+  disabled
+  label='Label'
+/>
+```
+
+## Cancel ripple efect
+
+```jsx
+<Checkbox
+  id='cancelRipple'
+  name='cancelRipple'
+  ripple={false}
+/>
 ```

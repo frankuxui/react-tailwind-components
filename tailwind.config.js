@@ -19,7 +19,8 @@ module.exports = {
 
       animation: {
         modal: 'modal 0.1s linear',
-        striped: 'striped 2s linear infinite'
+        striped: 'striped 2s linear infinite',
+        ripple: 'ripple 550ms linear'
       },
 
       // Backgrounds
@@ -64,6 +65,15 @@ module.exports = {
           },
           to: {
             backgroundPosition: '0 0'
+          }
+        },
+        ripple: {
+          from: {
+            transform: 'scale(0)'
+          },
+          to: {
+            opacity: '0',
+            transform: 'scale(2)'
           }
         }
       },
