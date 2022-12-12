@@ -31,7 +31,7 @@ export const ButtonStarted = () => {
 export const ButtonGithub = () => {
   return (
     <Link
-      href='https://github.com/gomotor/gomotor-development-tools'
+      href='/'
       passHref
       className='no-underline flex items-center justify-center px-4 py-2 rounded-lg space-x-2 font-medium transition-all bg-[#e7ebec] text-black hover:bg-[#e0e5e7]' target='_blank' rel='noreferrer'
     >
